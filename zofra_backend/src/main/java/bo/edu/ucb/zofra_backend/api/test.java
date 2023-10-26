@@ -1,4 +1,4 @@
-package bo.edu.ucb.zofra_backend.Api;
+package bo.edu.ucb.zofra_backend.api;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
