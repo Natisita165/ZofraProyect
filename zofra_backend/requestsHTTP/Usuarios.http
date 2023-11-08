@@ -1,1 +1,43 @@
-GET http://localhost:8080/usuario
+### Obtener todos los usuarios
+GET http://localhost:8081/usuario
+
+### Crear nuevo usuario
+POST http://localhost:8081/usuario
+Content-Type: application/json
+
+{
+  "area": "administracion",
+  "lastname": "Mendes",
+  "mail": "mendes@gmail.com",
+  "name": "Jaimito",
+  "passwords": "12345",
+  "user": "mendesj"
+}
+
+### Actualizar usuario
+PUT http://localhost:8081/usuario/3
+Content-Type: application/json
+
+{
+  "area": "administracion",
+  "lastname": "Morales",
+  "mail": "morales@gmail.com",
+  "name": "Miles",
+  "passwords": "12345",
+  "user": "jaimem"
+}
+
+### Eliminar Usuario
+DELETE http://localhost:8081/usuario/1
+
+### Obtener un usuario
+GET http://localhost:8081/usuario/1
+
+### Login
+POST http://localhost:8081/usuario/login
+Content-Type: application/json
+
+{
+  "passwords": "12345",
+  "user": "mendesj"
+}
