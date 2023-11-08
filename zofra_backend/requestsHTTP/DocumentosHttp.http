@@ -1,0 +1,34 @@
+### Obtener Documentos
+GET http://localhost:8081/documento
+
+### Obtener Un Documento
+GET http://localhost:8081/documento/2
+
+### Crear un Documento
+POST http://localhost:8081/documento
+Content-Type: application/json
+
+{
+  "areaD": "area1",
+  "codeD": "123s",
+  "nameD": "nombre Documento",
+  "typeD": "tipo A",
+  "idUsuarios": {
+    "idUsuarios": 1
+  }
+}
+
+### Actualizar Documento
+PUT http://localhost:8081/documento/2
+Content-Type: application/json
+
+{
+  "areaD": "area2",
+  "codeD": "123ssa",
+  "nameD": "nombre Documento 2",
+  "typeD": "tipo C"
+}
+
+
+### Eliminar Documento
+DELETE http://localhost:8081/documento/1

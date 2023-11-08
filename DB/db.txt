@@ -1,0 +1,136 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema zofra
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema zofra
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `zofra` DEFAULT CHARACTER SET utf8 ;
+USE `zofra` ;
+
+-- -----------------------------------------------------
+-- Table `zofra`.`Usuarios`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `zofra`.`Usuarios` (
+  `idUsuarios` INT NOT NULL AUTO_INCREMENT,
+  `user` VARCHAR(45) NOT NULL,
+  `passwors` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `lastname` VARCHAR(45) NOT NULL,
+  `area` VARCHAR(45) NOT NULL,
+  `mail` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idUsuarios`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `zofra`.`PuntosControl`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `zofra`.`PuntosControl` (
+  `idPuntosControl` INT NOT NULL AUTO_INCREMENT,
+  `nameCP` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idPuntosControl`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `zofra`.`Poliza`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `zofra`.`Poliza` (
+  `idPoliza` INT NOT NULL AUTO_INCREMENT,
+  `typeP` VARCHAR(45) NOT NULL,
+  `codeP` VARCHAR(45) NOT NULL,
+  `areaP` VARCHAR(45) NOT NULL,
+  `stateP` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idPoliza`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `zofra`.`Mercaderia`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `zofra`.`Mercaderia` (
+  `idMercaderia` INT NOT NULL AUTO_INCREMENT,
+  `nameMerc` VARCHAR(45) NOT NULL,
+  `quantity` DOUBLE NOT NULL,
+  `price` DOUBLE NOT NULL,
+  `importer` VARCHAR(45) NOT NULL,
+  `type` VARCHAR(45) NOT NULL,
+  `dateIn` DATE NOT NULL,
+  `PuntosControl_idPuntosControl` INT NOT NULL,
+  `Poliza_idPoliza` INT NOT NULL,
+  `Usuarios_idUsuarios` INT NOT NULL,
+  PRIMARY KEY (`idMercaderia`, `PuntosControl_idPuntosControl`, `Usuarios_idUsuarios`),
+  INDEX `fk_Mercaderia_PuntosControl_idx` (`PuntosControl_idPuntosControl` ASC) VISIBLE,
+  INDEX `fk_Mercaderia_Poliza1_idx` (`Poliza_idPoliza` ASC) VISIBLE,
+  INDEX `fk_Mercaderia_Usuarios1_idx` (`Usuarios_idUsuarios` ASC) VISIBLE,
+  CONSTRAINT `fk_Mercaderia_PuntosControl`
+    FOREIGN KEY (`PuntosControl_idPuntosControl`)
+    REFERENCES `zofra`.`PuntosControl` (`idPuntosControl`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Mercaderia_Poliza1`
+    FOREIGN KEY (`Poliza_idPoliza`)
+    REFERENCES `zofra`.`Poliza` (`idPoliza`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Mercaderia_Usuarios1`
+    FOREIGN KEY (`Usuarios_idUsuarios`)
+    REFERENCES `zofra`.`Usuarios` (`idUsuarios`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `zofra`.`Documentos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `zofra`.`Documentos` (
+  `idDocumentos` INT NOT NULL AUTO_INCREMENT,
+  `nameD` VARCHAR(45) NOT NULL,
+  `areaD` VARCHAR(45) NOT NULL,
+  `typeD` VARCHAR(45) NOT NULL,
+  `codeD` VARCHAR(45) NOT NULL,
+  `Usuarios_idUsuarios` INT NOT NULL,
+  PRIMARY KEY (`idDocumentos`, `Usuarios_idUsuarios`),
+  INDEX `fk_Documentos_Usuarios1_idx` (`Usuarios_idUsuarios` ASC) VISIBLE,
+  CONSTRAINT `fk_Documentos_Usuarios1`
+    FOREIGN KEY (`Usuarios_idUsuarios`)
+    REFERENCES `zofra`.`Usuarios` (`idUsuarios`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `zofra`.`Documentos_has_Mercaderia`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `zofra`.`Documentos_has_Mercaderia` (
+  `Documentos_idDocumentos` INT NOT NULL,
+  `Mercaderia_idMercaderia` INT NOT NULL,
+  `Mercaderia_PuntosControl_idPuntosControl` INT NOT NULL,
+  PRIMARY KEY (`Documentos_idDocumentos`, `Mercaderia_idMercaderia`, `Mercaderia_PuntosControl_idPuntosControl`),
+  INDEX `fk_Documentos_has_Mercaderia_Mercaderia1_idx` (`Mercaderia_idMercaderia` ASC, `Mercaderia_PuntosControl_idPuntosControl` ASC) VISIBLE,
+  INDEX `fk_Documentos_has_Mercaderia_Documentos1_idx` (`Documentos_idDocumentos` ASC) VISIBLE,
+  CONSTRAINT `fk_Documentos_has_Mercaderia_Documentos1`
+    FOREIGN KEY (`Documentos_idDocumentos`)
+    REFERENCES `zofra`.`Documentos` (`idDocumentos`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Documentos_has_Mercaderia_Mercaderia1`
+    FOREIGN KEY (`Mercaderia_idMercaderia` , `Mercaderia_PuntosControl_idPuntosControl`)
+    REFERENCES `zofra`.`Mercaderia` (`idMercaderia` , `PuntosControl_idPuntosControl`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

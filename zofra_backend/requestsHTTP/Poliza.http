@@ -1,0 +1,29 @@
+### Obtener todas las polizas
+GET http://localhost:8081/poliza
+
+
+### Crear Poliza
+POST http://localhost:8081/poliza
+Content-Type: application/json
+
+{
+  "areaP": "area1",
+  "codeP": "codigo x",
+  "stateP": "estado x",
+  "typeP": "tipo x"
+}
+
+
+### Actualizar Poliza
+PUT http://localhost:8081/poliza/1
+Content-Type: application/json
+
+{
+  "areaP": "area1.2",
+  "codeP": "codigo x1",
+  "stateP": "estado x1",
+  "typeP": "tipo x1"
+}
+
+### Eliminar Poliza
+DELETE http://localhost:8081/polza/1

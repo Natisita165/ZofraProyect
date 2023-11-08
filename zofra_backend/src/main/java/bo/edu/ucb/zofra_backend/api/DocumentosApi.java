@@ -1,0 +1,61 @@
+package bo.edu.ucb.zofra_backend.api;
+
+
+import bo.edu.ucb.zofra_backend.entidad.Documentos;
+import bo.edu.ucb.zofra_backend.repositorio.DocumentosRepository;
+import bo.edu.ucb.zofra_backend.servicios.DocumentosService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+public class DocumentosApi {
+
+    private DocumentosService docServ;
+
+    @Autowired
+    public DocumentosApi(DocumentosService y){this.docServ=y;}
+
+
+    @GetMapping("/documento")
+    public List<Documentos> obtenerDocumentos(){
+        return docServ.obtenerDocumentos();
+    }
+
+    @GetMapping("/documento/{id}")
+    public ResponseEntity<?> obtenerUnDocumento(@PathVariable("id") Integer id){
+        Documentos respuesta = docServ.obtenerUnDocumento(id);
+        if(respuesta==null){
+            return new ResponseEntity<>("El documento no existe", HttpStatus.NOT_FOUND);
+
+        }else {
+            return new ResponseEntity<>(respuesta, HttpStatus.OK);
+        }
+    }
+
+    @PostMapping("/documento")
+    public Documentos crearDocumento(@RequestBody Documentos documento){
+        return docServ.crearDocumento(documento);
+    }
+
+    @PutMapping("/documento/{id}")
+    public ResponseEntity<?> updateDocumento(@PathVariable("id") Integer id, @RequestBody Documentos documento){
+        Documentos respuesta2 = docServ.updateDocumento(id, documento);
+        if (respuesta2==null){
+            return new ResponseEntity<>("El id del documento no existe", HttpStatus.NOT_FOUND);
+        }else {
+            return new ResponseEntity<>(respuesta2, HttpStatus.OK);
+        }
+
+    }
+
+    @DeleteMapping("/documento/{id}")
+    public ResponseEntity<?> deleateDocumento(@PathVariable("id") Integer id){
+        boolean resp = docServ.deleateDocumento(id);
+        return new ResponseEntity<>("Eliminado correctamente", HttpStatus.OK);
+    }
+}

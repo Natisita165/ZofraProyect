@@ -1,0 +1,97 @@
+### Obtener toda la mercaderia
+GET http://localhost:8081/mercaderia
+
+### Crear nuevo usuario
+POST http://localhost:8081/mercaderia
+Content-Type: application/json
+
+{
+  "dateIn": "2000-09-21",
+  "importer": "Mario",
+  "nameMerc": "nombrex",
+  "price": 50020.80,
+  "quantity": 700.50,
+  "type":"tipo A",
+  "idUsuarios": {
+    "idUsuarios": 1
+  },
+  "idPuntosControl": {
+    "idPuntosControl": 1
+  }
+}
+
+
+### Editar un usuario
+PUT http://localhost:8081/mercaderia/5
+Content-Type: application/json
+
+{
+  "dateIn": "2000-09-25",
+  "importer": "Mario222222222222",
+  "nameMerc": "nombrexzzzzzz",
+  "price": 50,
+  "quantity": 700.50,
+  "type": "tipo B"
+}
+
+
+### Eliminar Usuario
+DELETE http://localhost:8081/mercaderia/1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
