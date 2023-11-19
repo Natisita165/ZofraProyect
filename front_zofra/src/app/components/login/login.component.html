@@ -21,10 +21,8 @@
             </div> -->
             
             
-            <div *ngIf="formUser.errors?.['servidor']" class="error">Ha ocurrido un error en el servidor.</div>
-            <div *ngIf="cargandoValidacion" class="cargando">Validando campos...</div>
-
-            <tr><td><input type="submit" value="Ingresar" [disabled]="formUser.invalid || cargandoValidacion"></td></tr>
+           
+            <tr><td><input type="submit" value="Ingresar" [disabled]="formUser.invalid"></td></tr>
             
             <p>{{errorMessage}}</p>
 

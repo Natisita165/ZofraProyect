@@ -1,0 +1,26 @@
+.banner {
+    display: flex;
+    justify-content: center;
+}
+
+.pills{
+    margin-bottom: 35px;
+}
+
+.active {
+    background-color: #004188 !important;
+}
+
+.nav-item {
+    margin: 0 10px;
+    border: 1px; 
+    border-style: solid !important;
+    border-radius: 8px !important;
+    border-color: #004188 !important;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #004188;
+    font-weight: bold;
+}

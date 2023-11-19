@@ -1,0 +1,44 @@
+<div class="banner">
+    <img width="50%" src="../../../assets/zofraboministerio.png" alt="zofra banner">
+  </div>
+  
+  <div class="pills" *ngIf="role !== 'administrador'; else adminPills">
+    <ul class="nav nav-pills justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link {{ tab === 'inicio' ? 'active' : ''}}" (click)="setInicio()" href="/nav-pills">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ tab === 'misdocs' ? 'active' : ''}}" (click)="setMisDocs()" href="/nav-pills">Mis
+          Documentos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ tab === 'otrosdocs' ? 'active' : ''}}" (click)="setOtrosDocs()" href="/nav-pills">Otros
+          Documentos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ tab === 'polizas' ? 'active' : ''}}" (click)="setPolizas()" href="/nav-pills">Pólizas</a>
+      </li>
+    </ul>
+  </div>
+  
+  <ng-template #adminPills>
+    <div class="pills">
+    <ul class="nav nav-pills justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link {{ tab === 'inicio' ? 'active' : ''}}" (click)="setInicio()" href="/nav-pills">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ tab === 'puntos' ? 'active' : ''}}" (click)="setPuntos()" href="/nav-pills">Puntos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ tab === 'fiscalizacion' ? 'active' : ''}}" (click)="setFiscalizacion()" href="/nav-pills">Fiscalización</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ tab === 'mercaderia' ? 'active' : ''}}" (click)="setMercaderia()" href="/nav-pills">Mercadería</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ tab === 'usuarios' ? 'active' : ''}}" (click)="setUsuarios()" href="/nav-pills">Usuarios</a>
+      </li>
+    </ul>
+    </div>
+  </ng-template>

@@ -1,0 +1,55 @@
+<table class="table">
+    <thead class="table-dark">
+      <tr class="tablahead">
+        <th class="tablahead" scope="col">Codigo</th>
+        <th class="tablahead" scope="col">Nombre Documento</th>
+        <th class="tablahead" scope="col">Area</th>
+        <th class="tablahead" scope="col">Tipo</th>
+        <th class="tablahead" scope="col">Estado</th>
+        <th class="tablahead" scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let doc of varDocs">
+        <td scope="row">{{doc.codeD}}</td>
+        <td>{{doc.nameD}}</td>
+        <td>{{doc.areaD}}</td>
+        <td>{{doc.typeD}}</td>
+        <td><i class="{{doc.estadoD? 'bi bi-unlock-fill':'bi bi-lock-fill'}}"></i></td>
+        <td>
+          <button type="button" class="btn btn-success" (click)="descargarDocs()">Descargar</button> &nbsp;
+          <button type="button" class="btn btn-warning">Editar</button> &nbsp;
+          <button type="button" class="btn btn-danger">Eliminar</button> 
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+<!-- <table BORDER>
+	<TR>
+		<TH>CODIGO</TH>
+		<TH>Nombre</TH>
+		<TH>Area</TH>
+        <TH>Tipo</TH>
+	</TR>
+	<TR>
+	    <TD>Codigo 1</TD>
+	    <TD>Nombre 1</TD>
+	    <TD>Area 1</TD>
+        <TD>Tipo 1</TD>
+	</TR>
+    <TR>
+	    <TD>Codigo 2</TD>
+	    <TD>Nombre 2</TD>
+	    <TD>Area 2</TD>
+        <TD>Tipo 2</TD>
+	</TR>
+    <TR>
+	    <TD>Codigo 3</TD>
+	    <TD>Nombre 3</TD>
+	    <TD>Area 3</TD>
+        <TD>Tipo 3</TD>
+	</TR>
+	
+</table> -->

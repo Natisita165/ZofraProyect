@@ -15,15 +15,7 @@ export class UsuariosServiceService {
   login(user:Usuarios){
     return this.http
     .post(this.Url+"/usuario/login",user,{observe:"response"})
-    .pipe(
-      catchError(this.errorHandler)
-    )
   
   }
 
-  errorHandler(error: HttpErrorResponse){
-    return observableThrowError(error.message)
-
-
-  }
 }

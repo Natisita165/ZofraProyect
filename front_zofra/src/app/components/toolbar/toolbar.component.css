@@ -1,0 +1,28 @@
+.toolbar{
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    background-color: #004188;
+    color: white;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.toolbar #welcome {
+    margin: 0 16px;
+}
+
+.toolbar #logout {
+    margin: 0 16px;
+    text-decoration: none;
+    color: white !important;
+}
+
+.toolbar #logout:hover {
+    color: #dfdfdf !important;
+}
