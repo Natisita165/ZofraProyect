@@ -1,0 +1,27 @@
+<app-toolbar></app-toolbar>
+<app-nav-pills></app-nav-pills>
+<table class="table">
+    <thead class="table-dark">
+      <tr class="tablahead">
+        <th class="tablahead" scope="col">Codigo</th>
+        <th class="tablahead" scope="col">Area</th>
+        <th class="tablahead" scope="col">Estado</th>
+        <th class="tablahead" scope="col">Tipo</th>
+        <th class="tablahead" scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let doc of varPoliza">
+        <td scope="row">{{doc.codeP}}</td>
+        <td>{{doc.areaP}}</td>
+        <td>{{doc.stateP}}</td>
+        <td>{{doc.typeP}}</td>
+        <td>
+          <button type="button" class="btn btn-success" (click)="descargarDocs()">Descargar</button> &nbsp;
+          <button type="button" class="btn btn-warning">Editar</button> &nbsp;
+          <button type="button" class="btn btn-danger">Eliminar</button> 
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>

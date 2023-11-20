@@ -1,0 +1,22 @@
+.home-carousel{
+    margin: 0 15%;
+    margin-top: 5%;
+}
+
+.home-carousel-msg {
+    margin-top: 2%;
+}
+
+.card-body h5 {
+    color: #0E6ACE;
+    font-weight: 900;
+}
+
+.card-body p {
+    color: #0E6ACE;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+}

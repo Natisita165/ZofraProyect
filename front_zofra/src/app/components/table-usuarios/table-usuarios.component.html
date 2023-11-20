@@ -1,0 +1,23 @@
+<app-toolbar></app-toolbar>
+<app-nav-pills></app-nav-pills>
+<table class="table">
+    <thead class="table-dark">
+      <tr class="tablahead">
+        <th class="tablahead" scope="col">Nombre Usuario</th>
+        <th class="tablahead" scope="col">Apeliido Usuario</th>
+        <th class="tablahead" scope="col">Area</th>
+        <th class="tablahead" scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let doc of varUsuarios">
+        <td scope="row">{{doc.name}}</td>
+        <td>{{doc.lastname}}</td>
+        <td>{{doc.area}}</td>
+        <td>
+            <button type="button" class="btn btn-warning" (click)="editarUser()">Editar</button>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>

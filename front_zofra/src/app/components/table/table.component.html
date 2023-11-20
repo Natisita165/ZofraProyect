@@ -1,3 +1,7 @@
+<app-toolbar></app-toolbar>
+<app-nav-pills></app-nav-pills>
+
+<div class="container"><hr></div>
 <table class="table">
     <thead class="table-dark">
       <tr class="tablahead">
@@ -15,7 +19,7 @@
         <td>{{doc.nameD}}</td>
         <td>{{doc.areaD}}</td>
         <td>{{doc.typeD}}</td>
-        <td><i class="{{doc.estadoD? 'bi bi-unlock-fill':'bi bi-lock-fill'}}"></i></td>
+        <td><i style="font-size: 2em;" class="{{doc.estadoD? 'bi bi-unlock-fill':'bi bi-lock-fill'}}"></i></td>
         <td>
           <button type="button" class="btn btn-success" (click)="descargarDocs()">Descargar</button> &nbsp;
           <button type="button" class="btn btn-warning">Editar</button> &nbsp;

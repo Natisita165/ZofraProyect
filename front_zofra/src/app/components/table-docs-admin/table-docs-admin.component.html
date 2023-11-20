@@ -1,0 +1,26 @@
+<app-toolbar></app-toolbar>
+<app-nav-pills></app-nav-pills>
+<table class="table">
+    <thead class="table-dark">
+      <tr class="tablahead">
+        <th class="tablahead" scope="col">Codigo</th>
+        <th class="tablahead" scope="col">Nombre Documento</th>
+        <th class="tablahead" scope="col">Area</th>
+        <th class="tablahead" scope="col">Tipo</th>
+        <th class="tablahead" scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let doc of varDocsAdmin">
+        <td scope="row">{{doc.codeD}}</td>
+        <td>{{doc.nameD}}</td>
+        <td>{{doc.areaD}}</td>
+        <td>{{doc.typeD}}</td>
+        <td>
+          <button type="button" class="btn btn-success" (click)="descargarDocs()">Descargar</button>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+

@@ -1,0 +1,25 @@
+table{
+    border-color: #004188;
+    height: 70% !important;
+    width: 50% !important;
+    /* margin-top: 250px; */
+    margin-left: 370px;
+}
+
+th{
+    color: #004188;
+    border: #004188 3px solid;
+}
+
+td{
+    border: #004188 3px solid;
+}
+
+.tablahead{
+    color: white;
+    background-color: #004188 !important;
+}
+
+.table-dark{
+    background-color: #004188 !important;
+}

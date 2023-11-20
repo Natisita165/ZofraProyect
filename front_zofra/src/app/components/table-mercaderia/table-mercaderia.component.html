@@ -1,0 +1,29 @@
+<app-toolbar></app-toolbar>
+<app-nav-pills></app-nav-pills>
+<table class="table">
+    <thead class="table-dark">
+      <tr class="tablahead">
+        <th class="tablahead" scope="col">Nombre Mercaderia</th>
+        <th class="tablahead" scope="col">Nombre Importador</th>
+        <th class="tablahead" scope="col">Precio</th>
+        <th class="tablahead" scope="col">Cantidad</th>
+        <th class="tablahead" scope="col">Tipo</th>
+        <th class="tablahead" scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let doc of varMercaderia">
+        <td>{{doc.nameMerc}}</td>
+        <td>{{doc.importer}}</td>
+        <td>{{doc.price}}</td>
+        <td>{{doc.quantity}}</td>
+        <td>{{doc.type}}</td>
+        <td>
+            <button type="button" class="btn btn-success" (click)="descargarDocs()">Descargar</button> &nbsp;
+            <button type="button" class="btn btn-warning">Editar</button> &nbsp;
+            <button type="button" class="btn btn-danger">Eliminar</button> 
+          </td>
+      </tr>
+      
+    </tbody>
+  </table>

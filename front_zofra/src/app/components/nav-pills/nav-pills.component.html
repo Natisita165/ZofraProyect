@@ -2,43 +2,43 @@
     <img width="50%" src="../../../assets/zofraboministerio.png" alt="zofra banner">
   </div>
   
-  <div class="pills" *ngIf="role !== 'administrador'; else adminPills">
+  <!-- <div class="pills" *ngIf="role !== 'administrador'; else adminPills">
     <ul class="nav nav-pills justify-content-center">
       <li class="nav-item">
-        <a class="nav-link {{ tab === 'inicio' ? 'active' : ''}}" (click)="setInicio()" href="/nav-pills">Inicio</a>
+        <a class="nav-link {{ tab === 'inicio' ? 'active' : ''}}" (click)="setInicio()" href="/home">Inicio</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ tab === 'misdocs' ? 'active' : ''}}" (click)="setMisDocs()" href="/nav-pills">Mis
+        <a class="nav-link {{ tab === 'misdocs' ? 'active' : ''}}" (click)="setMisDocs()" href="/mis-documentos">Mis
           Documentos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ tab === 'otrosdocs' ? 'active' : ''}}" (click)="setOtrosDocs()" href="/nav-pills">Otros
+        <a class="nav-link {{ tab === 'otrosdocs' ? 'active' : ''}}" (click)="setOtrosDocs()" href="/otros-documentos">Otros
           Documentos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ tab === 'polizas' ? 'active' : ''}}" (click)="setPolizas()" href="/nav-pills">Pólizas</a>
+        <a class="nav-link {{ tab === 'polizas' ? 'active' : ''}}" (click)="setPolizas()" href="/poliza">Pólizas</a>
       </li>
     </ul>
-  </div>
+  </div> -->
   
-  <ng-template #adminPills>
+  <!-- <ng-template #adminPills> -->
     <div class="pills">
     <ul class="nav nav-pills justify-content-center">
       <li class="nav-item">
-        <a class="nav-link {{ tab === 'inicio' ? 'active' : ''}}" (click)="setInicio()" href="/nav-pills">Inicio</a>
+        <a class="nav-link {{ tab === 'inicio' ? 'active' : ''}}" (click)="setInicio()" href="/home">Inicio</a>
       </li>
       <li class="nav-item">
         <a class="nav-link {{ tab === 'puntos' ? 'active' : ''}}" (click)="setPuntos()" href="/nav-pills">Puntos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ tab === 'fiscalizacion' ? 'active' : ''}}" (click)="setFiscalizacion()" href="/nav-pills">Fiscalización</a>
+        <a class="nav-link {{ tab === 'fiscalizacion' ? 'active' : ''}}" (click)="setFiscalizacion()" href="/docs-admin">Documentos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ tab === 'mercaderia' ? 'active' : ''}}" (click)="setMercaderia()" href="/nav-pills">Mercadería</a>
+        <a class="nav-link {{ tab === 'mercaderia' ? 'active' : ''}}" (click)="setMercaderia()" href="/mercaderia">Mercadería</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ tab === 'usuarios' ? 'active' : ''}}" (click)="setUsuarios()" href="/nav-pills">Usuarios</a>
+        <a class="nav-link {{ tab === 'usuarios' ? 'active' : ''}}" (click)="setUsuarios()" href="/usuarios">Usuarios</a>
       </li>
     </ul>
     </div>
-  </ng-template>
+  <!-- </ng-template> -->

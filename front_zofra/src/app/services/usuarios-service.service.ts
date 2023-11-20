@@ -18,4 +18,10 @@ export class UsuariosServiceService {
   
   }
 
+  getUsuarios(){
+    return this.http
+    .get(this.Url+"/usuario",{observe:"response"})
+  
+  }
+
 }
