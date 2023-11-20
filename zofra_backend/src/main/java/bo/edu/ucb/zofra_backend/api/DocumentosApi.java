@@ -2,6 +2,7 @@ package bo.edu.ucb.zofra_backend.api;
 
 
 import bo.edu.ucb.zofra_backend.entidad.Documentos;
+import bo.edu.ucb.zofra_backend.entidad.Usuarios;
 import bo.edu.ucb.zofra_backend.repositorio.DocumentosRepository;
 import bo.edu.ucb.zofra_backend.servicios.DocumentosService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
 public class DocumentosApi {
 
     private DocumentosService docServ;
@@ -57,5 +59,19 @@ public class DocumentosApi {
     public ResponseEntity<?> deleateDocumento(@PathVariable("id") Integer id){
         boolean resp = docServ.deleateDocumento(id);
         return new ResponseEntity<>("Eliminado correctamente", HttpStatus.OK);
+    }
+
+
+    @GetMapping("/documento/publico")
+    public ResponseEntity<?> obtenerDocsLock(){
+        List<Documentos> respuesta3 = docServ.obtenerDocsLocks();
+        return new ResponseEntity<>(respuesta3, HttpStatus.OK);
+
+    }
+
+    @GetMapping("/documento/docsUsuario/{id}")
+    public ResponseEntity<?> obtenerDocsUnUsuario(@PathVariable("id") Integer id){
+        List<Documentos> respuesta4 = docServ.obtenerDocsUnUsuario(id);
+        return new ResponseEntity<>(respuesta4, HttpStatus.OK);
     }
 }

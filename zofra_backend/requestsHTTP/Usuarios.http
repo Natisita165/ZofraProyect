@@ -6,12 +6,12 @@ POST http://localhost:8081/usuario
 Content-Type: application/json
 
 {
-  "area": "administracion",
-  "lastname": "Mendes",
-  "mail": "mendes@gmail.com",
-  "name": "Jaimito",
+  "area": "recepcion",
+  "lastname": "Perez",
+  "mail": "perez@gmail.com",
+  "name": "Carlos",
   "passwords": "12345",
-  "user": "mendesj"
+  "user": "carlosp"
 }
 
 ### Actualizar usuario

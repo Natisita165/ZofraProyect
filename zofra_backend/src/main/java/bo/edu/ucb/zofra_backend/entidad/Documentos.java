@@ -29,5 +29,6 @@ public class Documentos {
     private String areaD;
     private String typeD;
     private String codeD;
+    private Boolean estadoD;
     //private Blob pdfD;
 }

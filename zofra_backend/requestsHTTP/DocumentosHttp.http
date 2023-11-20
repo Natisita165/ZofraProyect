@@ -9,26 +9,36 @@ POST http://localhost:8081/documento
 Content-Type: application/json
 
 {
-  "areaD": "area1",
+  "areaD": "area2",
   "codeD": "123s",
-  "nameD": "nombre Documento",
-  "typeD": "tipo A",
+  "nameD": "nombre Documentoddd",
+  "typeD": "tipo s",
+  "estadoD": true,
   "idUsuarios": {
     "idUsuarios": 1
   }
 }
 
 ### Actualizar Documento
-PUT http://localhost:8081/documento/2
+PUT http://localhost:8081/documento/3
 Content-Type: application/json
 
 {
   "areaD": "area2",
   "codeD": "123ssa",
   "nameD": "nombre Documento 2",
-  "typeD": "tipo C"
+  "typeD": "tipo C",
+  "estadoD": false
 }
 
 
 ### Eliminar Documento
 DELETE http://localhost:8081/documento/1
+
+
+### Documentos Locked o Unlocked
+GET http://localhost:8081/documento/publico
+
+
+### Documentos de Un solo Usuario
+GET http://localhost:8081/documento/docsUsuario/1
