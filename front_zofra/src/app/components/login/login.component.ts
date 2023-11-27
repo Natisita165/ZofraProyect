@@ -67,6 +67,7 @@ procesar(data:any){
         localStorage.setItem("area",this.usuarioResponse.area!.toString());
         localStorage.setItem("name",this.usuarioResponse.name!.toString());
         localStorage.setItem("lastname",this.usuarioResponse.lastname!.toString());
+        localStorage.setItem("page","inicio");
         this.router.navigateByUrl('home');
 
       // }else if(res.status===404){

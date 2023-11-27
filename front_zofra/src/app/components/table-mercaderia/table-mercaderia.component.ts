@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Mercaderia } from 'src/app/interface/mercaderia';
 import { MercaderiaService } from 'src/app/services/mercaderia.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-table-mercaderia',
@@ -29,6 +30,29 @@ export class TableMercaderiaComponent {
   descargarDocs(){
     console.log("Descragar");
   }
+
+  handleClick() {
+    Swal.fire({
+      title: "Eliminar registro?",
+      text: "No podrás deshacer esta opción!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, eliminar!",
+      cancelButtonText: "Cancelar"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        console.log("Eliminando registro...");
+        // Swal.fire({
+        //   title: "Deleted!",
+        //   text: "Your file has been deleted.",
+        //   icon: "success"
+        // });
+      }
+    });
+  }
+
 
 
 }

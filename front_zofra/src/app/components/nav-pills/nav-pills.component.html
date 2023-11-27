@@ -2,7 +2,7 @@
     <img width="50%" src="../../../assets/zofraboministerio.png" alt="zofra banner">
   </div>
   
-  <!-- <div class="pills" *ngIf="role !== 'administrador'; else adminPills">
+  <div class="pills" *ngIf="role !== 'administracion'; else adminPills">
     <ul class="nav nav-pills justify-content-center">
       <li class="nav-item">
         <a class="nav-link {{ tab === 'inicio' ? 'active' : ''}}" (click)="setInicio()" href="/home">Inicio</a>
@@ -19,9 +19,9 @@
         <a class="nav-link {{ tab === 'polizas' ? 'active' : ''}}" (click)="setPolizas()" href="/poliza">Pólizas</a>
       </li>
     </ul>
-  </div> -->
+  </div> 
   
-  <!-- <ng-template #adminPills> -->
+  <ng-template #adminPills> 
     <div class="pills">
     <ul class="nav nav-pills justify-content-center">
       <li class="nav-item">
@@ -41,4 +41,4 @@
       </li>
     </ul>
     </div>
-  <!-- </ng-template> -->
+  </ng-template>

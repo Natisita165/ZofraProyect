@@ -8,6 +8,9 @@ import { TablePolizaComponent } from './components/table-poliza/table-poliza.com
 import { TableDocsAdminComponent } from './components/table-docs-admin/table-docs-admin.component';
 import { TableUsuariosComponent } from './components/table-usuarios/table-usuarios.component';
 import { TableMercaderiaComponent } from './components/table-mercaderia/table-mercaderia.component';
+import { NuevoUsuarioPopUpComponent } from './components/nuevo-usuario-pop-up/nuevo-usuario-pop-up.component';
+import { NuevoDocumentoPopUpComponent } from './components/nuevo-documento-pop-up/nuevo-documento-pop-up.component';
+import { NuevaPolizaPopUpComponent } from './components/nueva-poliza-pop-up/nueva-poliza-pop-up.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -17,7 +20,10 @@ const routes: Routes = [
   {path: 'poliza', component: TablePolizaComponent},
   {path: 'docs-admin', component: TableDocsAdminComponent},
   {path: 'usuarios', component: TableUsuariosComponent},
-  {path: 'mercaderia', component: TableMercaderiaComponent}
+  {path: 'mercaderia', component: TableMercaderiaComponent},
+  {path: 'crear-nuevo-usuario', component: NuevoUsuarioPopUpComponent},
+  {path: 'crear-nuevo-documento', component: NuevoDocumentoPopUpComponent},
+  {path: 'crear-nueva-poliza', component: NuevaPolizaPopUpComponent}
 ];
 
 @NgModule({

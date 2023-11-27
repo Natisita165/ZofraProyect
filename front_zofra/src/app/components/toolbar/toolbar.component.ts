@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,6 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class ToolbarComponent implements OnInit{
   userName?: string;
   date?: string;
+
+  constructor(
+    private router:Router
+  ){
+    
+  }
 
   ngOnInit(): void {
     this.getNameAndDate();
@@ -23,6 +30,8 @@ export class ToolbarComponent implements OnInit{
   handleLogoutClick(){
     console.warn("Cerrando sesión...");
     console.warn("Redirigiendo a Login...");
+    localStorage.clear();
+    this.router.navigateByUrl('');
   }
 
 }

@@ -12,6 +12,12 @@ export class TableUsuariosComponent implements OnInit{
 
   constructor(private usuariosService:UsuariosServiceService){}
 
+  
+
+  // openModel(){
+  //   document.getElementById('crear-nuevo-usuario')?.style.display='block';
+  // }
+
   ngOnInit() {
     this.obtenerUsuarios();
   }
