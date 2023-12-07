@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Poliza } from 'src/app/interface/poliza';
 import { PolizaService } from 'src/app/services/poliza.service';
+import { MatDialog } from '@angular/material/dialog';
+import { NuevaPolizaPopUpComponent } from '../nueva-poliza-pop-up/nueva-poliza-pop-up.component';
 
 @Component({
   selector: 'app-table-poliza',
@@ -11,7 +13,7 @@ export class TablePolizaComponent {
 
   varPoliza: Poliza[]=[];
 
-  constructor(private polizaService:PolizaService){}
+  constructor(private polizaService:PolizaService, private dialog: MatDialog){}
 
   ngOnInit() {
     this.obtenerPoliza();
@@ -30,6 +32,15 @@ export class TablePolizaComponent {
   descargarDocs(){
     console.log("Descragar");
   }
-
+  openDialog(){
+    let dialogRef= this.dialog.open(NuevaPolizaPopUpComponent, {
+      width: '50%',
+      //height: '50%',
+      data: {
+        username: "Natalia",
+        userId: 5
+      }
+    });
+  }
 
 }

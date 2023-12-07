@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatDialogModule } from '@angular/material/dialog'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +22,8 @@ import { NuevoDocumentoPopUpComponent } from './components/nuevo-documento-pop-u
 import { NuevaPolizaPopUpComponent } from './components/nueva-poliza-pop-up/nueva-poliza-pop-up.component';
 import { NuevaMercaderiaPopUpComponent } from './components/nueva-mercaderia-pop-up/nueva-mercaderia-pop-up.component';
 import { CambiarPassPopUpComponent } from './components/cambiar-pass-pop-up/cambiar-pass-pop-up.component'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PuntosControlComponent } from './components/puntos-control/puntos-control.component';
 
 
 @NgModule({
@@ -41,14 +44,17 @@ import { CambiarPassPopUpComponent } from './components/cambiar-pass-pop-up/camb
     NuevoDocumentoPopUpComponent,
     NuevaPolizaPopUpComponent,
     NuevaMercaderiaPopUpComponent,
-    CambiarPassPopUpComponent
+    CambiarPassPopUpComponent,
+    PuntosControlComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

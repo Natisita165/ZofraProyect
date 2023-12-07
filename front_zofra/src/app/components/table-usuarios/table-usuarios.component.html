@@ -1,11 +1,11 @@
 <app-toolbar></app-toolbar>
 <app-nav-pills></app-nav-pills>
-<button type="button" class="btn btn-secondary" routerLink="/crear-nuevo-usuario">Nuevo Usuario</button>
+<button type="button" class="btn btn-secondary" (click)="openDialog()">Nuevo Usuario</button>
 <table class="table">
     <thead class="table-dark">
       <tr class="tablahead">
         <th class="tablahead" scope="col">Nombre Usuario</th>
-        <th class="tablahead" scope="col">Apeliido Usuario</th>
+        <th class="tablahead" scope="col">Apellido Usuario</th>
         <th class="tablahead" scope="col">Area</th>
         <th class="tablahead" scope="col">Acciones</th>
       </tr>

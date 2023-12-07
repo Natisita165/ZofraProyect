@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Mercaderia } from 'src/app/interface/mercaderia';
 import { MercaderiaService } from 'src/app/services/mercaderia.service';
 import Swal from 'sweetalert2';
+import { NuevaMercaderiaPopUpComponent } from '../nueva-mercaderia-pop-up/nueva-mercaderia-pop-up.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-table-mercaderia',
@@ -11,7 +13,7 @@ import Swal from 'sweetalert2';
 export class TableMercaderiaComponent {
   varMercaderia: Mercaderia[]=[];
 
-  constructor(private mercaderiaService:MercaderiaService){}
+  constructor(private mercaderiaService:MercaderiaService, private dialog: MatDialog){}
 
   ngOnInit() {
     this.obtenerPuntos();
@@ -49,6 +51,18 @@ export class TableMercaderiaComponent {
         //   text: "Your file has been deleted.",
         //   icon: "success"
         // });
+      }
+    });
+  }
+
+
+  openDialog(){
+    let dialogRef= this.dialog.open(NuevaMercaderiaPopUpComponent, {
+      width: '50%',
+      //height: '50%',
+      data: {
+        username: "Natalia",
+        userId: 5
       }
     });
   }

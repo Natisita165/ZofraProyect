@@ -1,0 +1,26 @@
+.contenedor{
+    margin: 0 15%;
+}
+
+.fila {
+    margin-top: 5%;
+    display: flex;
+}
+
+.card{
+    margin-right: 12%;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.card img{
+    opacity: 0.85;
+}
+
+.card-title{
+    color: #004188;
+    font-weight: 900;
+    font-size: large;
+}

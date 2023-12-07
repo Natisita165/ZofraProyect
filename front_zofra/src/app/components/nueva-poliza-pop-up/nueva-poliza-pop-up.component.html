@@ -16,6 +16,7 @@
       <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
     </div>
     <div class="col-12">
-      <button type="submit" class="btn btn-primary" style="background-color: white; border-color: #004188; color: #004188;">Crear</button>
+      <button type="submit" class="btn btn-primary" style="background-color: white; border-color: #004188; color: #004188;" (click)="onCreate()">Crear</button>
+      <button class="btn btn-outline-danger" (click)="onCancel()">Cancelar</button>
     </div>
   </form>

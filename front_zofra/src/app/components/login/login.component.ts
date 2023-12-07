@@ -52,8 +52,6 @@ procesar(data:any){
 
   
   
-
-
   this.usuariosService.login(this.usuario).subscribe(
     (res)=>{
       console.log(res);

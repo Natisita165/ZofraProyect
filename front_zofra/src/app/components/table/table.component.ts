@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Documento } from 'src/app/interface/documento';
 import { DocumentoService } from 'src/app/services/documento.service';
 import Swal from 'sweetalert2';
+import { NuevoDocumentoPopUpComponent } from '../nuevo-documento-pop-up/nuevo-documento-pop-up.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-table',
@@ -12,7 +14,7 @@ export class TableComponent implements OnInit{
 
   varDocs: Documento[]=[];
 
-  constructor(private documentoService:DocumentoService){}
+  constructor(private documentoService:DocumentoService, private dialog: MatDialog){}
 
   ngOnInit() {
     this.obtenerDocumentos();
@@ -54,6 +56,15 @@ export class TableComponent implements OnInit{
     });
   }
 
-  
+  openDialog(){
+    let dialogRef= this.dialog.open(NuevoDocumentoPopUpComponent, {
+      width: '50%',
+      //height: '50%',
+      data: {
+        username: "Natalia",
+        userId: 5
+      }
+    });
+  }
 
 }

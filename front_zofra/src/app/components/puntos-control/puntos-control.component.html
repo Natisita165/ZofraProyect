@@ -1,0 +1,12 @@
+<app-toolbar></app-toolbar>
+<app-nav-pills></app-nav-pills>
+<div class="contenedor">
+    <div class="fila" *ngFor="let row of distributedPuntos">
+        <div class="card text-center col-md-3" *ngFor="let punto of row">
+            <img src="../../../assets/zofra1.jpg" class="card-img" alt="zofra1">
+            <div class="card-img-overlay">
+                <h5 class="card-title">{{punto.namePC}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
