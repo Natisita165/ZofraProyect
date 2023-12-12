@@ -8,9 +8,12 @@ import bo.edu.ucb.zofra_backend.servicios.DocumentosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -73,5 +76,25 @@ public class DocumentosApi {
     public ResponseEntity<?> obtenerDocsUnUsuario(@PathVariable("id") Integer id){
         List<Documentos> respuesta4 = docServ.obtenerDocsUnUsuario(id);
         return new ResponseEntity<>(respuesta4, HttpStatus.OK);
+    }
+
+
+//    @GetMapping("/documento/docsUsuarioJPQL/{id}")
+//    public ResponseEntity<?> obtenerDocsUnUsuarioJPQL(@PathVariable("id") Integer id){
+//        List<Documentos> respuesta4 = docServ.obtenerDocsUnUsuarioJPQL(id);
+//        return new ResponseEntity<>(respuesta4, HttpStatus.OK);
+//    }
+
+    @PutMapping("/documento/file/{id}")
+    public ResponseEntity<?> crearDocConFile(@PathVariable("id") Integer id, @RequestParam("pdfD")MultipartFile pdfD) throws IOException {
+        // todo manejar el null
+        return new ResponseEntity<>(docServ.uploadFile(id, pdfD), HttpStatus.OK);
+    }
+
+    @GetMapping("/documento/file/{id}")
+    public ResponseEntity<?> obtenerDocConFile(@PathVariable("id") Integer id){
+        byte[] pdfFile = docServ.downloadFile(id);
+        //return new ResponseEntity<>(pdfFile, HttpStatus.OK);
+        return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_PDF).body(pdfFile);
     }
 }

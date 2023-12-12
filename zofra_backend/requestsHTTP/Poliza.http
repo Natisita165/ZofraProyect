@@ -26,4 +26,8 @@ Content-Type: application/json
 }
 
 ### Eliminar Poliza
-DELETE http://localhost:8081/polza/1
+DELETE http://localhost:8081/poliza/1
+
+
+### Obtener una poliza por Id
+GET http://localhost:8081/poliza/2

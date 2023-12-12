@@ -3,6 +3,7 @@ package bo.edu.ucb.zofra_backend.entidad;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +14,7 @@ import java.util.Date;
 @Table(name = "mercaderia")
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Data
 public class Mercaderia {
 
@@ -23,6 +25,7 @@ public class Mercaderia {
 
     @ManyToOne
     @JoinColumn(name = "idUsuarios")
+    //@Column(columnDefinition = "ON UPDATE CASCADE ON DELETE SET NULL")
     Usuarios idUsuarios;
 
     @ManyToOne
@@ -35,6 +38,13 @@ public class Mercaderia {
     private String importer;
     private String type;
     private Date dateIn;
+
+
+    @Lob
+    @Column(length = 10000000)
+    private byte[] pdfM;
+    private String pdfTypeM;
+    private String namePdfM;
     //private Blob pdfM;
 
 

@@ -41,4 +41,7 @@ GET http://localhost:8081/documento/publico
 
 
 ### Documentos de Un solo Usuario
-GET http://localhost:8081/documento/docsUsuario/1
+GET http://localhost:8081/documento/docsUsuario/3
+
+#### Documentos de Un solo Usuario JPQL
+#GET http://localhost:8081/documento/docsUsuarioJPQL/3

@@ -26,4 +26,11 @@ public class Poliza {
     private String areaP;
     private String stateP;
     //private Blob pdfP;
+
+    // files
+    @Lob
+    @Column(length = 1000000)
+    private byte[] pdfP;
+    private String nameP;
+    private String pdfType;
 }

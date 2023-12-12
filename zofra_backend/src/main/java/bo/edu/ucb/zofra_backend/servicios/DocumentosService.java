@@ -4,10 +4,14 @@ package bo.edu.ucb.zofra_backend.servicios;
 import bo.edu.ucb.zofra_backend.entidad.Documentos;
 import bo.edu.ucb.zofra_backend.entidad.Usuarios;
 import bo.edu.ucb.zofra_backend.repositorio.DocumentosRepository;
+import bo.edu.ucb.zofra_backend.util.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DocumentosService {
@@ -57,5 +61,33 @@ public class DocumentosService {
     public List<Documentos> obtenerDocsUnUsuario(Integer id){
         List<Documentos> respons2 = docRep.getDocumentosByIdUsuarios(id).orElse(null);
         return respons2;
+    }
+
+//    public List<Documentos> obtenerDocsUnUsuarioJPQL(Integer id){
+//        List<Documentos> respons2 = docRep.getDocumentosByIdUsuariosJPQL(id).orElse(null);
+//        return respons2;
+//    }
+
+    //FILES
+    public Documentos uploadFile(Integer id, MultipartFile file) throws IOException {
+        Documentos documento = docRep.findById(id).orElse(null);
+        if(documento != null) {
+            documento.setAreaD(documento.getAreaD());
+            documento.setCodeD(documento.getCodeD());
+            documento.setTypeD(documento.getTypeD());
+            documento.setEstadoD(documento.getEstadoD());
+
+            documento.setNameD(documento.getNameD());
+            documento.setPdfType(file.getContentType());
+            documento.setPdfD(FileUtils.compressFile(file.getBytes()));
+            return docRep.save(documento);
+        }
+        return null;
+    }
+
+    public byte[] downloadFile(Integer id){
+        Optional<Documentos> doc = docRep.findById(id);
+        byte[] pdfFile = FileUtils.decompressFile(doc.get().getPdfD());
+        return pdfFile;
     }
 }

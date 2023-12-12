@@ -35,6 +35,10 @@ Content-Type: application/json
 }
 
 
+### Obtener toda la mercaderia
+GET http://localhost:8081/mercaderia/13
+
+
 ### Eliminar Usuario
 DELETE http://localhost:8081/mercaderia/1
 
