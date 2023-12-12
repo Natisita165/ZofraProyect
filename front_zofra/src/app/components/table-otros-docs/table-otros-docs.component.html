@@ -11,13 +11,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let doc of varOtherDocs">
-        <td scope="row">{{doc.codeD}}</td>
-        <td>{{doc.nameD}}</td>
-        <td>{{doc.areaD}}</td>
-        <td>{{doc.typeD}}</td>
+      <tr *ngFor="let docO of varOtherDocs">
+        <td scope="row">{{docO.codeD}}</td>
+        <td>{{docO.nameD}}</td>
+        <td>{{docO.areaD}}</td>
+        <td>{{docO.typeD}}</td>
         <td>
-          <button type="button" class="btn btn-success" (click)="descargarDocs()">Descargar</button>
+          <button type="button" class="btn btn-success" (click)="descargarDocsO(docO.idDocumentos)">Descargar</button>
         </td>
       </tr>
       

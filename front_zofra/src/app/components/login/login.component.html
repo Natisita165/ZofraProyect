@@ -1,31 +1,28 @@
-
-<div> 
-    
-            <tr><td colspan="2" style="background-color: #ffffff;"><label>LOGIN</label></td></tr>
-            <tr><td align="center" rowspan="5"><img src="../../../assets/zofraboministerio.jpg"/></td></tr>
+<div>
+    <tr>
+        <td colspan="2" style="background-color: #ffffff;"><label>LOGIN</label></td>
+    </tr>
+    <tr>
+        <td align="center" rowspan="5"><img src="../../../assets/zofraboministerio.jpg" /></td>
+    </tr>
     <form [formGroup]="formUser" (submit)="procesar(formulario.value)" #formulario="ngForm">
-            <tr><td><label>Nombre de Usuario:</label></td></tr>
-            <tr><td><input type="text" formControlName="user" class="form-control" placeholder="Ingresar Usuario" name="txtusuario"/></td></tr>
-
-            <!-- <div class="alert alert-danger mt-2" [hidden]="username.valid || username.pristine"> -->
-                <!-- El Usuario es obligatorio -->
-            <!-- </div> -->
-            <tr><td><label>Contraseña:</label></td></tr>
-            <tr><td><input type="password" formControlName="passwords" class="form-control" placeholder="Ingresar Contraseña" name="txtpassword" /></td></tr>
-
-            <!-- <div class="alert alert-danger mt-2" [hidden]="pasword.valid || pasword.pristine"> -->
-                
-                <!-- La contrasenia es obligatoria
-      
-
-            </div> -->
-            
-            
-           
-            <tr><td><input type="submit" value="Ingresar" [disabled]="formUser.invalid"></td></tr>
-            
-            <p>{{errorMessage}}</p>
-
+        <tr>
+            <td><label>Nombre de Usuario:</label></td>
+        </tr>
+        <tr>
+            <td><input type="text" formControlName="user" class="form-control" placeholder="Ingresar Usuario"
+                    name="txtusuario" /></td>
+        </tr>
+        <tr>
+            <td><label>Contraseña:</label></td>
+        </tr>
+        <tr>
+            <td><input type="password" formControlName="passwords" class="form-control"
+                    placeholder="Ingresar Contraseña" name="txtpassword" /></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Ingresar" [disabled]="formUser.invalid"></td>
+        </tr>
+        <p>{{errorMessage}}</p>
     </form>
-    
 </div>

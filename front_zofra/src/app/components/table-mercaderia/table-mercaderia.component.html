@@ -13,17 +13,17 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let doc of varMercaderia">
-        <td>{{doc.nameMerc}}</td>
-        <td>{{doc.importer}}</td>
-        <td>{{doc.price}}</td>
-        <td>{{doc.quantity}}</td>
-        <td>{{doc.type}}</td>
+      <tr *ngFor="let merc of varMercaderia">
+        <td>{{merc.nameMerc}}</td>
+        <td>{{merc.importer}}</td>
+        <td>{{merc.price}}</td>
+        <td>{{merc.quantity}}</td>
+        <td>{{merc.type}}</td>
         <td>
-            <button type="button" class="btn btn-success" (click)="descargarDocs()">Descargar</button> &nbsp;
-            <button type="button" class="btn btn-warning">Editar</button> &nbsp;
+            <button type="button" class="btn btn-success" (click)="descargarDocs(merc.idMercaderia)">Descargar</button> &nbsp;
+            <button type="button" class="btn btn-warning" (click)="openEdition(merc.idMercaderia)">Editar</button> &nbsp;
             <!-- <button type="button" class="btn btn-danger">Eliminar</button>  -->
-            <button type="button" class="btn btn-primary" (click)="handleClick()">Eliminar</button>
+            <button type="button" class="btn btn-primary" (click)="deleteMerc(merc.idMercaderia)">Eliminar</button>
           </td>
       </tr>
       

@@ -24,6 +24,11 @@ import { NuevaMercaderiaPopUpComponent } from './components/nueva-mercaderia-pop
 import { CambiarPassPopUpComponent } from './components/cambiar-pass-pop-up/cambiar-pass-pop-up.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PuntosControlComponent } from './components/puntos-control/puntos-control.component';
+import { EditarMercaderiaPopUpComponent } from './components/editar-mercaderia-pop-up/editar-mercaderia-pop-up.component';
+import { ReporteMercaderiaComponent } from './components/reporte-mercaderia/reporte-mercaderia.component';
+import { EditarPolizaPopUpComponent } from './components/editar-poliza-pop-up/editar-poliza-pop-up.component';
+import { EditarDocumentoPopUpComponent } from './components/editar-documento-pop-up/editar-documento-pop-up.component';
+import { EditarUsuarioPopUpComponent } from './components/editar-usuario-pop-up/editar-usuario-pop-up.component';
 
 
 @NgModule({
@@ -45,7 +50,12 @@ import { PuntosControlComponent } from './components/puntos-control/puntos-contr
     NuevaPolizaPopUpComponent,
     NuevaMercaderiaPopUpComponent,
     CambiarPassPopUpComponent,
-    PuntosControlComponent
+    PuntosControlComponent,
+    EditarMercaderiaPopUpComponent,
+    ReporteMercaderiaComponent,
+    EditarPolizaPopUpComponent,
+    EditarDocumentoPopUpComponent,
+    EditarUsuarioPopUpComponent
   ],
   imports: [
     BrowserModule,

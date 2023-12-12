@@ -1,19 +1,19 @@
-<form class="row g-3" (submit)="onSubmit(formulario.value)" #formulario="ngForm">
+<form class="row g-3" (submit)="updateDoc(formulario.value)" #formulario="ngForm">
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Nombre del Documento</label>
-      <input type="email" class="form-control" id="inputEmail4" name="txtNombreD" ngModel>
+      <input type="email" class="form-control" id="inputEmail4" name="txtNombreD" ngModel="{{varDocumento.nameD}}" value="{{varDocumento.nameD}}">
     </div>
     <div class="col-md-6">
       <label for="inputPassword4" class="form-label">Codigo</label>
-      <input type="text" class="form-control" id="inputPassword4" name="txtCodigoD" ngModel>
+      <input type="text" class="form-control" id="inputPassword4" name="txtCodigoD" ngModel="{{varDocumento.codeD}}" value="{{varDocumento.codeD}}">
     </div>
     <div class="col-12">
       <label for="inputAddress" class="form-label">Tipo</label>
-      <input type="text" class="form-control" id="inputAddress" name="txtTipoD" ngModel>
+      <input type="text" class="form-control" id="inputAddress" name="txtTipoD" ngModel="{{varDocumento.typeD}}" value="{{varDocumento.typeD}}">
     </div>
     <div class="col-md-6">
       <label for="inputCity" class="form-label">Area</label>
-      <input type="text" class="form-control" id="inputCity" name="txtAreaD" ngModel>
+      <input type="text" class="form-control" id="inputCity" name="txtAreaD" ngModel="{{varDocumento.areaD}}" value="{{varDocumento.areaD}}">
     </div>
     <div class="col-md-4">
       <label for="inputState" class="form-label">Estado</label>
@@ -27,7 +27,7 @@
       <input type="file" class="form-control" id="inputPDF" name="txtPdfD" (change)="getFile($event)">
     </div>
     <div class="col-12">
-      <button type="submit" class="btn btn-primary" style="background-color: white; border-color: #004188; color: #004188;" >Crear</button>
-      <button class="btn btn-outline-danger" (click)="onCancel()">Cancelar</button>
+      <button type="submit" class="btn btn-primary" style="background-color: white; border-color: #004188; color: #004188;" (click)="onCreate()">Crear</button>
+      <button class="btn btn-outline-danger" (click)="onCancel($event)">Cancelar</button>
     </div>
   </form>

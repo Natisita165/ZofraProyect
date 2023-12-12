@@ -1,19 +1,19 @@
-<form class="row g-3" (submit)="onSubmitP(formulario.value)" #formulario="ngForm">
+<form class="row g-3" (submit)="updatePoli(formulario.value)" #formulario="ngForm">
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Codigo</label>
-      <input type="email" class="form-control" id="inputEmail4" name="txtCodigoP" ngModel>
+      <input type="email" class="form-control" id="inputEmail4" name="txtCodigoP" ngModel="{{varPoliza.codeP}}" value="{{varPoliza.codeP}}">
     </div>
     <div class="col-md-6">
       <label for="inputPassword4" class="form-label">Area</label>
-      <input type="text" class="form-control" id="inputPassword4" name="txtAreaP" ngModel>
+      <input type="text" class="form-control" id="inputPassword4" name="txtAreaP" ngModel="{{varPoliza.areaP}}" value="{{varPoliza.areaP}}">
     </div>
     <div class="col-12">
       <label for="inputAddress" class="form-label">Estado</label>
-      <input type="text" class="form-control" id="inputAddress" name="txtEstadoP" ngModel>
+      <input type="text" class="form-control" id="inputAddress" name="txtEstadoP" ngModel="{{varPoliza.stateP}}" value="{{varPoliza.stateP}}">
     </div>
     <div class="col-12">
       <label for="inputAddress2" class="form-label">Tipo</label>
-      <input type="text" class="form-control" id="inputAddress2" name="txtTipoP" ngModel>
+      <input type="text" class="form-control" id="inputAddress2" name="txtTipoP" ngModel="{{varPoliza.typeP}}" value="{{varPoliza.typeP}}">
     </div>
     <div class="col-md-6">
       <label for="inputPDF" class="form-label">Documento PDF</label>

@@ -1,6 +1,6 @@
 <app-toolbar></app-toolbar>
 <app-nav-pills></app-nav-pills>
-<button type="button" class="btn btn-secondary" (click)="openDialog()">Nuevo Usuario</button>
+<button type="button" class="btn btn-secondary" (click)="openDialogUser()">Nuevo Usuario</button>
 <table class="table">
     <thead class="table-dark">
       <tr class="tablahead">
@@ -11,12 +11,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let doc of varUsuarios">
-        <td scope="row">{{doc.name}}</td>
-        <td>{{doc.lastname}}</td>
-        <td>{{doc.area}}</td>
+      <tr *ngFor="let us of varUsuarios">
+        <td scope="row">{{us.name}}</td>
+        <td>{{us.lastname}}</td>
+        <td>{{us.area}}</td>
         <td>
-            <button type="button" class="btn btn-warning" (click)="editarUser()">Editar</button>
+            <button type="button" class="btn btn-warning" (click)="editarUser(us.idUsuarios)">Editar</button>
+            <button type="button" class="btn btn-primary" (click)="deleteUser(us.idUsuarios)">Eliminar</button>
         </td>
       </tr>
       

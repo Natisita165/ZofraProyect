@@ -2,7 +2,7 @@ import { PuntosControl } from "./puntos-control";
 import { Usuarios } from "./usuarios";
 export interface Mercaderia {
     idMercaderia?: Number,
-    dateIn?: Date,
+    dateIn?: String,
     importer?: String,
     nameMerc?: String,
     price?: Number,

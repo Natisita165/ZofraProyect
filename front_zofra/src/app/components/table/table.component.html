@@ -1,6 +1,6 @@
 <app-toolbar></app-toolbar>
 <app-nav-pills></app-nav-pills>
-<button type="button" class="btn btn-secondary" (click)="openDialog()">Nuevo Documento</button>
+<button type="button" class="btn btn-secondary" (click)="openDialogDoc()">Nuevo Documento</button>
 <div class="container"><hr></div>
 <table class="table">
     <thead class="table-dark">
@@ -21,10 +21,10 @@
         <td>{{doc.typeD}}</td>
         <td><i style="font-size: 2em;" class="{{doc.estadoD? 'bi bi-unlock-fill':'bi bi-lock-fill'}}"></i></td>
         <td>
-          <button type="button" class="btn btn-success" (click)="descargarDocs()">Descargar</button> &nbsp;
-          <button type="button" class="btn btn-warning">Editar</button> &nbsp;
+          <button type="button" class="btn btn-success" (click)="descargarDocs(doc.idDocumentos)" >Descargar</button> &nbsp;
+          <button type="button" class="btn btn-warning" (click)="openEditionDoc(doc.idDocumentos)">Editar</button> &nbsp;
           <!-- <button type="button" class="btn btn-danger">Eliminar</button>-->
-          <button type="button" class="btn btn-primary" (click)="handleClick()">Eliminar</button> 
+          <button type="button" class="btn btn-primary" (click)="deleteDoc(doc.idDocumentos)">Eliminar</button> 
         </td>
       </tr>
       
