@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PuntosControl } from 'src/app/interface/puntos-control';
 import { PuntosControlService } from 'src/app/services/puntos-control.service';
+import { TablaPuntosPopUpComponent } from '../tabla-puntos-pop-up/tabla-puntos-pop-up.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-puntos-control',
@@ -12,7 +14,7 @@ export class PuntosControlComponent implements OnInit{
   // puntos = ["Punto uno", "Punto dos superrequetelargosupinshinombre", "punto tres"];
   puntos: PuntosControl[]=[];
 
-  constructor(private puntosControlService: PuntosControlService){}
+  constructor(private puntosControlService: PuntosControlService, private dialog: MatDialog){}
   
   obtenerPuntos(){
     this.puntosControlService.getPuntos().subscribe(
@@ -35,6 +37,12 @@ export class PuntosControlComponent implements OnInit{
       R.push(arr.slice(i, i+itemsPerRow));
     }
     this.distributedPuntos = R;
+  }
+
+  abrirTabla(){
+    let dialogRef= this.dialog.open(TablaPuntosPopUpComponent, {
+      width: '50%',
+    });
   }
 
 }

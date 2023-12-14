@@ -4,9 +4,7 @@
 		width: 400px;
 		height: 500px;
     }
-	div.error{
-		
-	}
+	
 
     form{
 		border: 2px solid #000000;
@@ -40,4 +38,8 @@
 		width: 40%;
 	}
 	
-
+	.loginform{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}

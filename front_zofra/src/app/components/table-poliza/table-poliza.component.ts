@@ -86,19 +86,19 @@ export class TablePolizaComponent {
         this.polizaService.deletePoliza(idPoliza).subscribe(
           (res)=>{
             console.log("Poliza Eliminada: ", res);
-            location.reload();
+            setTimeout('location.reload()',3000);
     
           },
           (error)=>{
             console.log("No se pudo eliminar", error);
-            location.reload();
+            setTimeout('location.reload()',3000);
 
           }
         )
 
          Swal.fire({
-           title: "Deleted!",
-           text: "Your file has been deleted.",
+           title: "¡ELIMINADO!",
+           text: "La Poliza ha sido eliminada",
            icon: "success"
          });
       }

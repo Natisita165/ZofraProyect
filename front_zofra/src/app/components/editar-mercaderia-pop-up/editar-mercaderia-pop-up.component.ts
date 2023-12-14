@@ -4,6 +4,7 @@ import { Mercaderia } from 'src/app/interface/mercaderia';
 import { PuntosControl } from 'src/app/interface/puntos-control';
 import { Usuarios } from 'src/app/interface/usuarios';
 import { MercaderiaService } from 'src/app/services/mercaderia.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editar-mercaderia-pop-up',
@@ -83,9 +84,27 @@ export class EditarMercaderiaPopUpComponent {
     )
   }
 
+  
+  faltaArchivo(){
+    Swal.fire({
+      title: "¡No hay documento!",
+      text: "Sube un archivo porfavor",
+      icon: "warning"
+    });
+  }
+    
+
+
+
   updateMerc(data: any) {
     console.log(data);
     console.log(this.file);
+    if(!this.file){
+      console.log("falta el archivo!");
+      this.faltaArchivo();
+      return;
+    }
+
     this.mercaderia.nameMerc = data.txtNombreM;
     this.mercaderia.importer = data.txtNombreImporter;
     this.mercaderia.quantity = data.txtCantidadM;

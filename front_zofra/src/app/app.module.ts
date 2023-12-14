@@ -29,6 +29,7 @@ import { ReporteMercaderiaComponent } from './components/reporte-mercaderia/repo
 import { EditarPolizaPopUpComponent } from './components/editar-poliza-pop-up/editar-poliza-pop-up.component';
 import { EditarDocumentoPopUpComponent } from './components/editar-documento-pop-up/editar-documento-pop-up.component';
 import { EditarUsuarioPopUpComponent } from './components/editar-usuario-pop-up/editar-usuario-pop-up.component';
+import { TablaPuntosPopUpComponent } from './components/tabla-puntos-pop-up/tabla-puntos-pop-up.component';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { EditarUsuarioPopUpComponent } from './components/editar-usuario-pop-up/
     ReporteMercaderiaComponent,
     EditarPolizaPopUpComponent,
     EditarDocumentoPopUpComponent,
-    EditarUsuarioPopUpComponent
+    EditarUsuarioPopUpComponent,
+    TablaPuntosPopUpComponent
   ],
   imports: [
     BrowserModule,

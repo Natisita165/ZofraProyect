@@ -79,18 +79,18 @@ export class TableMercaderiaComponent {
         this.mercaderiaService.deleteMerc(idMercaderia).subscribe(
           (res)=>{
             console.log("Mercaderia Eliminada: ", res);
-            location.reload();
+            setTimeout('location.reload()',3000);
     
           },
           (error)=>{
             console.log("No se pudo eliminar", error);
-            location.reload();
+            setTimeout('location.reload()',3000);
           }
         )
 
          Swal.fire({
-           title: "Deleted!",
-           text: "Your file has been deleted.",
+           title: "ELIMINADO!",
+           text: "La mercaderia ha sido eliminada",
            icon: "success"
          });
       }

@@ -46,7 +46,7 @@ export class TableUsuariosComponent implements OnInit{
 
   deleteUser(idUsuarios:any) {
     Swal.fire({
-      title: "Eliminar registro?",
+      title: "¿Eliminar registro?",
       text: "No podrás deshacer esta opción!",
       icon: "warning",
       showCancelButton: true,
@@ -61,20 +61,23 @@ export class TableUsuariosComponent implements OnInit{
         this.usuariosService.deletUsuario(idUsuarios).subscribe(
           (res)=>{
             console.log("Documento Eliminada: ", res);
-            location.reload();
+           //location.reload();
+            setTimeout('location.reload()',3000);
              
     
           },
           (error)=>{
             console.log("No se pudo eliminar", error);
-            location.reload();
+            //location.reload();
+            setTimeout('location.reload()',3000);
 
           }
         )
          Swal.fire({
-           title: "Deleted!",
-           text: "Your file has been deleted.",
+           title: "¡ELIMINADO!",
+           text: "El usuario ha sido eliminado",
            icon: "success"
+           
          });
       }
     });

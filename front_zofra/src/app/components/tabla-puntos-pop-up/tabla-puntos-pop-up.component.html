@@ -1,0 +1,19 @@
+<table class="table">
+    <thead class="table-dark">
+      <tr class="tablahead">
+        <th class="tablahead" scope="col">Mes</th>
+        <th class="tablahead" scope="col">Estado</th>
+        <th class="tablahead" scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mes of meses">
+        <td>{{mes}}</td>
+        <td>Estado</td>
+        <td>
+            <button type="button" class="btn btn-success" (click)="descargarMes()">Descargar</button>
+          </td>
+      </tr>
+      
+    </tbody>
+  </table>

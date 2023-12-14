@@ -1,23 +1,23 @@
-<form class="row g-3" (submit)="onSubmit(formulario.value)" #formulario="ngForm">
+<form class="row g-3" (submit)="onSubmit(formulario.value)" #formulario="ngForm" ngNativeValidate>
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Nombre del Documento</label>
-      <input type="email" class="form-control" id="inputEmail4" name="txtNombreD" ngModel>
+      <input type="email" class="form-control" id="inputEmail4" name="txtNombreD" ngModel required>
     </div>
     <div class="col-md-6">
       <label for="inputPassword4" class="form-label">Codigo</label>
-      <input type="text" class="form-control" id="inputPassword4" name="txtCodigoD" ngModel>
+      <input type="text" class="form-control" id="inputPassword4" name="txtCodigoD" ngModel required>
     </div>
     <div class="col-12">
       <label for="inputAddress" class="form-label">Tipo</label>
-      <input type="text" class="form-control" id="inputAddress" name="txtTipoD" ngModel>
+      <input type="text" class="form-control" id="inputAddress" name="txtTipoD" ngModel required>
     </div>
     <div class="col-md-6">
       <label for="inputCity" class="form-label">Area</label>
-      <input type="text" class="form-control" id="inputCity" name="txtAreaD" ngModel>
+      <input type="text" class="form-control" id="inputCity" name="txtAreaD" ngModel required>
     </div>
     <div class="col-md-4">
       <label for="inputState" class="form-label">Estado</label>
-      <select id="inputState" class="form-select" name="txtEstadoD" ngModel="{{varDocumento.estadoD!}}">
+      <select id="inputState" class="form-select" name="txtEstadoD" ngModel="{{varDocumento.estadoD!}}" required>
         <option value="false" selected="{{ (varDocumento.estadoD! === false) ? 'selected' : '' }}">Privado</option>
         <option value="true" selected="{{ (varDocumento.estadoD! === true) ? 'selected' : '' }}">Publico</option>
       </select>
@@ -26,7 +26,7 @@
       <label for="inputPDF" class="form-label">Documento PDF</label>
       <input type="file" class="form-control" id="inputPDF" name="txtPdfD" (change)="getFile($event)">
     </div>
-    <div class="col-12">
+    <div class="col-12 buttons">
       <button type="submit" class="btn btn-primary" style="background-color: white; border-color: #004188; color: #004188;" >Crear</button>
       <button class="btn btn-outline-danger" (click)="onCancel()">Cancelar</button>
     </div>

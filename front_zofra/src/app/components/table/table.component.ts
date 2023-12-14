@@ -85,18 +85,18 @@ export class TableComponent implements OnInit{
         this.documentoService.deleteDoc(idDocumentos).subscribe(
           (res)=>{
             console.log("Documento Eliminada: ", res);
-            location.reload();
+            setTimeout('location.reload()',3000);
     
           },
           (error)=>{
             console.log("No se pudo eliminar", error);
-            location.reload();
+            setTimeout('location.reload()',3000);
 
           }
         )
          Swal.fire({
-           title: "Deleted!",
-           text: "Your file has been deleted.",
+           title: "ELIMINADO!",
+           text: "Tu documento ha sido eliminado",
            icon: "success"
          });
       }

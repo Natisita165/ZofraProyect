@@ -2,6 +2,8 @@ import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
 import { Poliza } from 'src/app/interface/poliza';
 import { PolizaService } from 'src/app/services/poliza.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-nueva-poliza-pop-up',
@@ -40,9 +42,23 @@ export class NuevaPolizaPopUpComponent {
     this.file = event.target.files[0];
   }
 
+
+  faltaArchivo(){
+    Swal.fire({
+      title: "¡No hay documento!",
+      text: "Sube un archivo porfavor",
+      icon: "warning"
+    });
+  }
+
   onSubmitP(data:any){
     console.log(data);
     console.log(this.file);
+    if(!this.file){
+      console.log("falta el archivo!");
+      this.faltaArchivo();
+      return;
+    }
     this.poliza.codeP=data.txtCodigoP;
     this.poliza.areaP=data.txtAreaP;
     this.poliza.stateP=data.txtEstadoP;

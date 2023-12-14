@@ -1,31 +1,38 @@
-<form class="row g-3" (submit)="updateMerc(formulario.value)" #formulario="ngForm">
+<form class="row g-3" (submit)="updateMerc(formulario.value)" #formulario="ngForm" ngNativeValidate>
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Nombre de la Mercaderia</label>
-      <input type="text" class="form-control" id="inputEmail4" name="txtNombreM" ngModel="{{varMercaderia.nameMerc}}" value="{{varMercaderia.nameMerc}}">
+      <input type="text" class="form-control" id="inputEmail4" name="txtNombreM" ngModel="{{varMercaderia.nameMerc}}" value="{{varMercaderia.nameMerc}}" required>
     </div>
     <div class="col-md-6">
       <label for="inputPassword4" class="form-label">Nombre Importador</label>
-      <input type="text" class="form-control" id="inputPassword4" name="txtNombreImporter" ngModel="{{varMercaderia.importer}}" value="{{varMercaderia.importer}}">
+      <input type="text" class="form-control" id="inputPassword4" name="txtNombreImporter" ngModel="{{varMercaderia.importer}}" value="{{varMercaderia.importer}}" required>
     </div>
     <div class="col-12">
       <label for="inputAddress" class="form-label">Cantidad</label>
-      <input type="text" class="form-control" id="inputAddress" name="txtCantidadM" ngModel="{{varMercaderia.quantity}}" value="{{varMercaderia.quantity}}">
+      <input type="text" class="form-control" id="inputAddress" name="txtCantidadM" ngModel="{{varMercaderia.quantity}}" value="{{varMercaderia.quantity}}" required>
     </div>
     <div class="col-12">
       <label for="inputAddress2" class="form-label">Precio</label>
-      <input type="text" class="form-control" id="inputAddress2" name="txtPrecioM" ngModel="{{varMercaderia.price}}" value="{{varMercaderia.price}}">
+      <input type="text" class="form-control" id="inputAddress2" name="txtPrecioM" ngModel="{{varMercaderia.price}}" value="{{varMercaderia.price}}" required>
     </div>
-    <div class="col-md-6">
-      <label for="inputCity" class="form-label">Tipo</label>
-      <input type="text" class="form-control" id="inputCity" name="txtTipoM" ngModel="{{varMercaderia.type}}" value="{{varMercaderia.type}}">
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">Tipo</label>
+      <select id="inputState" class="form-select" name="txtTipoM" ngModel="{{ varMercaderia.type! }}" required>
+        <option value="Vehiculos automotores" selected="{{ (varMercaderia.type! === 'Vehiculos automotores') ? 'selected' : '' }}">Vehiculos automotores</option>
+        <option value="Reactores" selected="{{ (varMercaderia.type! === 'Reactores') ? 'selected' : '' }}">Reactores</option>
+        <option value="Partes y accesorios" selected="{{ (varMercaderia.type! === 'Partes y accesorios') ? 'selected' : '' }}">Partes y accesorios</option>
+        <option value="Plantas" selected="{{ (varMercaderia.type! === 'Plantas') ? 'selected' : '' }}">Plantas</option>
+        <option value="Plastico y manufactura" selected="{{ (varMercaderia.type! === 'Plastico y manufactura') ? 'selected' : '' }}">Plastico y manufactura</option>
+        <option value="Animales Vivos" selected="{{ (varMercaderia.type! === 'Animales Vivos') ? 'selected' : '' }}">Animales Vivos</option>
+      </select>
     </div>
     <div class="col-md-6">
       <label for="inputCity" class="form-label">Fecha de Entrada</label>
-      <input type="date" class="form-control" id="inputCity" name="txtDateIn" ngModel="{{varMercaderia.dateIn}}" value="{{varMercaderia.dateIn}}">
+      <input type="date" class="form-control" id="inputCity" name="txtDateIn" ngModel="{{varMercaderia.dateIn}}" value="{{varMercaderia.dateIn}}" required>
     </div>
     <div class="col-md-4">
       <label for="inputState" class="form-label">Punto de Control</label>
-      <select id="inputState" class="form-select" name="txtPuntoControlMerc" ngModel="{{ varMercaderia.idPuntosControl!.idPuntosControl }}">
+      <select id="inputState" class="form-select" name="txtPuntoControlMerc" ngModel="{{ varMercaderia.idPuntosControl!.idPuntosControl }}" required>
         <option value="1" selected="{{ (varMercaderia.idPuntosControl!.idPuntosControl === 1) ? 'selected' : '' }}">1</option>
         <option value="2" selected="{{ (varMercaderia.idPuntosControl!.idPuntosControl === 2) ? 'selected' : '' }}">2</option>
         <option value="3" selected="{{ (varMercaderia.idPuntosControl!.idPuntosControl === 3) ? 'selected' : '' }}">3</option>
@@ -33,11 +40,11 @@
     </div>
     <div class="col-md-6">
       <label for="inputPDF" class="form-label">Documento PDF (selecccione para reemplazar)</label>
-      <input type="file" class="form-control" id="inputPDF" name="txtPdfD" (change)="getFile($event)" >
+      <input type="file" class="form-control" id="inputPDF" name="txtPdfD" (change)="getFile($event)">
     </div>
   
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary"
+    <div class="col-12 buttons">
+      <button type="submit" class="btn btn-primary" 
         style="background-color: white; border-color: #004188; color: #004188;" (click)="onCreate()">Crear</button>
       <button class="btn btn-outline-danger" (click)="onCancel($event)">Cancelar</button>
     </div>

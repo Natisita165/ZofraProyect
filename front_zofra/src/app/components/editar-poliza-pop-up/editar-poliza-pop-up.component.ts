@@ -2,6 +2,7 @@ import { Component, Inject, OnInit  } from '@angular/core';
 import { Poliza } from 'src/app/interface/poliza';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { PolizaService } from 'src/app/services/poliza.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editar-poliza-pop-up',
@@ -28,6 +29,15 @@ export class EditarPolizaPopUpComponent {
   onCreate() {
     console.log("Creando instancia...")
   }
+
+  faltaArchivo(){
+    Swal.fire({
+      title: "¡No hay documento!",
+      text: "Sube un archivo porfavor",
+      icon: "warning"
+    });
+  }
+
   updatePoli(data:any){
     console.log(data);
     console.log(this.file);
@@ -36,7 +46,12 @@ export class EditarPolizaPopUpComponent {
     this.poliza.stateP=data.txtEstadoP;
     this.poliza.typeP=data.txtTipoP;
 
-
+    if(!this.file){
+          console.log("falta el archivo!");
+          this.faltaArchivo();
+          return;
+        }
+        
     console.log("data para actualizar: ", this.poliza);
     this.polizaService.editarPoliza(this.poliza, this.id).subscribe(
       (res) => {

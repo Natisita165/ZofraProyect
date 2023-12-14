@@ -3,7 +3,7 @@ table{
     height: 70% !important;
     width: 50% !important;
     /* margin-top: 250px; */
-    margin-left: 370px;
+    margin: 0 25%;
 }
 
 th{
@@ -22,4 +22,7 @@ td{
 
 .table-dark{
     background-color: #004188 !important;
+}
+.containerButton{
+    margin: 0 25%;
 }

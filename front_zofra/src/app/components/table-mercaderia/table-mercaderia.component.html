@@ -1,31 +1,36 @@
 <app-toolbar></app-toolbar>
 <app-nav-pills></app-nav-pills>
-<button type="button" class="btn btn-secondary" (click)="openDialog()">Nueva Mercaderia</button>
+<div class="containerButton">
+  <button type="button" class="btn btn-success" (click)="openDialog()">Nueva Mercaderia</button>
+</div>
+<br>
 <table class="table">
-    <thead class="table-dark">
-      <tr class="tablahead">
-        <th class="tablahead" scope="col">Nombre Mercaderia</th>
-        <th class="tablahead" scope="col">Nombre Importador</th>
-        <th class="tablahead" scope="col">Precio</th>
-        <th class="tablahead" scope="col">Cantidad</th>
-        <th class="tablahead" scope="col">Tipo</th>
-        <th class="tablahead" scope="col">Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let merc of varMercaderia">
-        <td>{{merc.nameMerc}}</td>
-        <td>{{merc.importer}}</td>
-        <td>{{merc.price}}</td>
-        <td>{{merc.quantity}}</td>
-        <td>{{merc.type}}</td>
-        <td>
-            <button type="button" class="btn btn-success" (click)="descargarDocs(merc.idMercaderia)">Descargar</button> &nbsp;
-            <button type="button" class="btn btn-warning" (click)="openEdition(merc.idMercaderia)">Editar</button> &nbsp;
-            <!-- <button type="button" class="btn btn-danger">Eliminar</button>  -->
-            <button type="button" class="btn btn-primary" (click)="deleteMerc(merc.idMercaderia)">Eliminar</button>
-          </td>
-      </tr>
-      
-    </tbody>
-  </table>
+  <thead class="table-dark">
+    <tr class="tablahead">
+      <th class="tablahead" scope="col">Nombre Mercaderia</th>
+      <th class="tablahead" scope="col">Nombre Importador</th>
+      <th class="tablahead" scope="col">Precio</th>
+      <th class="tablahead" scope="col">Cantidad</th>
+      <th class="tablahead" scope="col">Tipo</th>
+      <th class="tablahead" scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let merc of varMercaderia">
+      <td>{{merc.nameMerc}}</td>
+      <td>{{merc.importer}}</td>
+      <td>{{merc.price}}</td>
+      <td>{{merc.quantity}}</td>
+      <td>{{merc.type}}</td>
+      <td>
+        <button type="button" class="btn btn-success" (click)="descargarDocs(merc.idMercaderia)">Descargar</button>
+        &nbsp;
+        <button type="button" class="btn btn-warning" (click)="openEdition(merc.idMercaderia)">Editar</button> &nbsp;
+        <!-- <button type="button" class="btn btn-danger">Eliminar</button>  -->
+        <button type="button" class="btn btn-primary" (click)="deleteMerc(merc.idMercaderia)">Eliminar</button>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+<br>

@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Documento } from 'src/app/interface/documento';
 import { Usuarios } from 'src/app/interface/usuarios';
 import { DocumentoService } from 'src/app/services/documento.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editar-documento-pop-up',
@@ -71,11 +72,22 @@ this.obtenerDocumento()
       }
     )
   }
-
+  faltaArchivo(){
+    Swal.fire({
+      title: "¡No hay documento!",
+      text: "Sube un archivo porfavor",
+      icon: "warning"
+    });
+  }
 
   updateDoc(data: any) {
     console.log(data);
     console.log(this.file);
+    if(!this.file){
+      console.log("falta el archivo!");
+      this.faltaArchivo();
+      return;
+    }
     this.varDocumento.nameD=data.txtNombreD;
     this.varDocumento.codeD=data.txtCodigoD;
     this.varDocumento.typeD=data.txtTipoD;

@@ -1,22 +1,28 @@
-import { Component, OnInit } from '@angular/core';
-import * as pdfMake from "pdfmake/build/pdfmake";
-import * as pdfFonts from "pdfmake/build/vfs_fonts";
+import { Component } from '@angular/core';
 import { Mercaderia } from 'src/app/interface/mercaderia';
 import { MercaderiaService } from 'src/app/services/mercaderia.service';
+import * as pdfMake from "pdfmake/build/pdfmake";
+import * as pdfFonts from "pdfmake/build/vfs_fonts";
 (<any>pdfMake).vfs = pdfFonts.pdfMake.vfs
 
 @Component({
-  selector: 'app-reporte-mercaderia',
-  templateUrl: './reporte-mercaderia.component.html',
-  styleUrls: ['./reporte-mercaderia.component.css']
+  selector: 'app-tabla-puntos-pop-up',
+  templateUrl: './tabla-puntos-pop-up.component.html',
+  styleUrls: ['./tabla-puntos-pop-up.component.css']
 })
-
-export class ReporteMercaderiaComponent {
+export class TablaPuntosPopUpComponent {
+  meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre", "Octubre","Noviembre","Diciembre"];
 
   varMercaderia: Mercaderia[] = [];
   dataToShow: any[] = [];
-
   constructor(private mercaderiaService: MercaderiaService) { }
+
+  descargarMes(){
+    console.log("descargado");
+    this.crearPDF();
+
+  }
+
 
   ngOnInit() {
     this.getMercaderia();
@@ -77,5 +83,6 @@ export class ReporteMercaderiaComponent {
     const pdf = pdfMake.createPdf(definition);
     pdf.open();
   }
-
 }
+
+

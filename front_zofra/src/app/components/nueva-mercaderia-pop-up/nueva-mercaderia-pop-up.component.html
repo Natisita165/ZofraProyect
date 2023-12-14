@@ -1,31 +1,38 @@
-<form class="row g-3" (submit)="onSubmit(formulario.value)" #formulario="ngForm">
+<form class="row g-3" (submit)="onSubmit(formulario.value)" #formulario="ngForm" ngNativeValidate>
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Nombre de la Mercaderia</label>
-    <input type="text" class="form-control" id="inputEmail4" name="txtNombreM" ngModel>
+    <input type="text" class="form-control" id="inputEmail4" name="txtNombreM" ngModel required>
   </div>
   <div class="col-md-6">
     <label for="inputPassword4" class="form-label">Nombre Importador</label>
-    <input type="text" class="form-control" id="inputPassword4" name="txtNombreImporter" ngModel>
+    <input type="text" class="form-control" id="inputPassword4" name="txtNombreImporter" ngModel required>
   </div>
   <div class="col-12">
     <label for="inputAddress" class="form-label">Cantidad</label>
-    <input type="text" class="form-control" id="inputAddress" name="txtCantidadM" ngModel>
+    <input type="number" class="form-control" id="inputAddress" name="txtCantidadM" ngModel required>
   </div>
   <div class="col-12">
     <label for="inputAddress2" class="form-label">Precio</label>
-    <input type="text" class="form-control" id="inputAddress2" name="txtPrecioM" ngModel>
+    <input type="number" class="form-control" id="inputAddress2" name="txtPrecioM" ngModel required>
   </div>
-  <div class="col-md-6">
-    <label for="inputCity" class="form-label">Tipo</label>
-    <input type="text" class="form-control" id="inputCity" name="txtTipoM" ngModel>
+  <div class="col-md-4">
+    <label for="inputState" class="form-label">Tipo</label>
+    <select id="inputState" class="form-select" name="txtTipoM" ngModel required>
+      <option selected value="Vehiculos automotores">Vehiculos automotores</option>
+      <option value="Reactores">Reactores</option>
+      <option value="Partes y accesorios">Partes y accesorios</option>
+      <option value="Plantas">Plantas</option>
+      <option value="Plastico y manufactura">Plastico y manufactura</option>
+      <option value="Animales Vivos" >Animales Vivos</option>
+    </select>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-6" >
     <label for="inputCity" class="form-label">Fecha de Entrada</label>
-    <input type="date" class="form-control" id="inputCity" name="txtDateIn" ngModel>
+    <input type="date" class="form-control" id="inputCity" name="txtDateIn" ngModel required>
   </div>
   <div class="col-md-4">
     <label for="inputState" class="form-label">Punto de Control</label>
-    <select id="inputState" class="form-select" name="txtPuntoControlMerc" ngModel>
+    <select id="inputState" class="form-select" name="txtPuntoControlMerc" ngModel required>
       <option selected value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -36,9 +43,10 @@
     <input type="file" class="form-control" id="inputPDF" name="txtPdfD" (change)="getFile($event)">
   </div>
 
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary"
+  <div class="col-12 buttons">
+    <button type="submit" class="btn btn-primary" 
       style="background-color: white; border-color: #004188; color: #004188;" (click)="onCreate()">Crear</button>
-    <button class="btn btn-outline-danger" (click)="onCancel($event)">Cancelar</button>
+      &nbsp;&nbsp;&nbsp;  
+    <button class="btn btn-danger" (click)="onCancel($event)">Cancelar</button>
   </div>
 </form>
