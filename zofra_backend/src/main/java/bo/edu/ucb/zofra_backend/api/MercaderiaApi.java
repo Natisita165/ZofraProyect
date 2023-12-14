@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -74,6 +75,15 @@ public class MercaderiaApi {
         byte[] pdfFile = mercServ.downloadFileMerc(id);
         //return new ResponseEntity<>(pdfFile, HttpStatus.OK);
         return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_PDF).body(pdfFile);
+    }
+
+
+    @GetMapping("/mercaderia/meses/{year}/{month}")
+    public ResponseEntity<?> obenerMes(@PathVariable("month") Integer month, @PathVariable("year") Integer year){
+
+        List<Mercaderia> respuestaMes=mercServ.obenerMes(month, year);
+        return new ResponseEntity<>(respuestaMes, HttpStatus.OK);
+
     }
 
 }

@@ -43,6 +43,8 @@ GET http://localhost:8081/mercaderia/13
 DELETE http://localhost:8081/mercaderia/1
 
 
+### Obtener toda la mercaderia por mes
+GET http://localhost:8081/mercaderia/meses/2022/12
 
 
 

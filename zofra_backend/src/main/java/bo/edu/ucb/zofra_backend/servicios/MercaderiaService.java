@@ -84,4 +84,9 @@ public class MercaderiaService {
         Mercaderia variableMerc=mercRep.findById(id).orElse(null);
         return variableMerc;
     }
+
+    public List<Mercaderia> obenerMes(Integer mes, Integer year){
+        List<Mercaderia> respons1 = mercRep.findByMes(mes, year);
+        return respons1;
+    }
 }
