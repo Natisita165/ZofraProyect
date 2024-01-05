@@ -49,6 +49,7 @@ export class NuevoUsuarioPopUpComponent implements OnInit{
     this.usuario.passwords=data.txtpassword;
     this.usuario.mail=data.txtmail;
     this.usuario.area=data.txtarea;
+    this.usuario.first=false;
 
     this.usuariosServicio.create(this.usuario).subscribe(
       (res)=>{

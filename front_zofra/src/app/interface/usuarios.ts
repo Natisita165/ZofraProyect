@@ -5,5 +5,6 @@ export interface Usuarios {
     name?: String,
     lastname?: String,
     area?: String,
-    mail?: String
+    mail?: String,
+    first?: Boolean
 }

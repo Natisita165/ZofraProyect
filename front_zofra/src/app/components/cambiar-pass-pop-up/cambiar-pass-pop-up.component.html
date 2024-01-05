@@ -1,11 +1,11 @@
-<form class="row g-3">
+<form class="row g-3" (submit)="updateDoc(formulario.value)" #formulario="ngForm" ngNativeValidate>
     <div class="col-md-6">
-      <label for="inputEmail4" class="form-label">Nueva Contraseña</label>
-      <input type="email" class="form-control" id="inputEmail4">
+      <label for="inputEmail4" class="form-label" >Nueva Contraseña</label>
+      <input type="password" class="form-control" id="inputEmail4" name="txtNuevPass1" ngModel="{{varPass.passwords}}" value="{{varPass.passwords}}" required >
     </div>
     <div class="col-md-6">
-      <label for="inputPassword4" class="form-label">Confirmar Nueva Contraseña</label>
-      <input type="password" class="form-control" id="inputPassword4">
+      <label for="inputPassword4" class="form-label" >Confirmar Nueva Contraseña</label>
+      <input type="password" class="form-control" id="inputPassword4" name="txtNuevPass2" ngModel="{{varPass.passwords}}" value="{{varPass.passwords}}" required>
     </div>
     <div class="col-12">
       <button type="submit" class="btn btn-primary" style="background-color: white; border-color: #004188; color: #004188;">Cambiar</button>
