@@ -17,37 +17,36 @@ public class UsuariosApi {
     private UsuarioService userServ;
 
     @Autowired
-    public UsuariosApi(UsuarioService x){
-        this.userServ=x;
+    public UsuariosApi(UsuarioService x) {
+        this.userServ = x;
     }
 
     @GetMapping("/usuario")
-    public List<Usuarios> obtenerUsuarios(){
+    public List<Usuarios> obtenerUsuarios() {
         return userServ.obtenerUsuarios();
     }
 
     // POST: nuevo usuario
     @PostMapping("/usuario")
-    public Usuarios crearUsuario(@RequestBody Usuarios usuario){
+    public Usuarios crearUsuario(@RequestBody Usuarios usuario) {
 
         return userServ.crearUsuario(usuario);
     }
 
     // PUT: editar usuario
     @PutMapping("/usuario/{id}")
-    public ResponseEntity<?> updateUsuario(@PathVariable("id") Integer id, @RequestBody Usuarios usuario){
+    public ResponseEntity<?> updateUsuario(@PathVariable("id") Integer id, @RequestBody Usuarios usuario) {
         Usuarios respuesta = userServ.actualizarUsuario(id, usuario);
-        if(respuesta == null){
+        if (respuesta == null) {
             return new ResponseEntity<>("El id no existe", HttpStatus.NOT_FOUND);
-        }
-        else{
+        } else {
             return new ResponseEntity<>(respuesta, HttpStatus.OK);
         }
     }
 
     // DELETE: eliminar usuario
     @DeleteMapping("/usuario/{id}")
-    public ResponseEntity<?> deleteUsuario(@PathVariable("id") Integer id){
+    public ResponseEntity<?> deleteUsuario(@PathVariable("id") Integer id) {
         boolean resp = userServ.eliminarUsuario(id);
         return new ResponseEntity<>("Eliminado correctamente", HttpStatus.OK);
     }
@@ -55,26 +54,26 @@ public class UsuariosApi {
     // GET: usuario especifico
 
     @GetMapping("/usuario/{id}")
-    public ResponseEntity<?> obtenerUnUsuario(@PathVariable("id") Integer id){
+    public ResponseEntity<?> obtenerUnUsuario(@PathVariable("id") Integer id) {
         Usuarios respuesta2 = userServ.encontrarUnUsuario(id);
-        if(respuesta2 == null){
+        if (respuesta2 == null) {
             return new ResponseEntity<>("El usuario no existe", HttpStatus.NOT_FOUND);
-        }else {
-            return new ResponseEntity<>(respuesta2,HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(respuesta2, HttpStatus.OK);
         }
     }
 
     @PostMapping("/usuario/login")
-    public ResponseEntity<?> obenerUserandPass(@RequestBody Usuarios usuario){
+    public ResponseEntity<?> obenerUserandPass(@RequestBody Usuarios usuario) {
 
         Usuarios respuesta3 = userServ.obenerUserandPass(usuario);
-        if(respuesta3==null){
+        if (respuesta3 == null) {
             return new ResponseEntity<>("Credenciales invalidas", HttpStatus.NOT_FOUND);
-        }else {
+        } else {
 
-            return new ResponseEntity<>(respuesta3,HttpStatus.OK);
+            return new ResponseEntity<>(respuesta3, HttpStatus.OK);
         }
     }
-
-
 }
+
+

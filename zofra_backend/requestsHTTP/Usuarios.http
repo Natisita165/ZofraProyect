@@ -6,25 +6,22 @@ POST http://localhost:8081/usuario
 Content-Type: application/json
 
 {
-  "area": "recepcion",
+  "area": "IT",
   "lastname": "Perez",
   "mail": "perez@gmail.com",
   "name": "Carlos",
   "passwords": "12345",
-  "user": "carlosp"
+  "user": "user-it2",
+  "first": false
 }
 
 ### Actualizar usuario
-PUT http://localhost:8081/usuario/3
+PUT http://localhost:8081/usuario/15
 Content-Type: application/json
 
 {
-  "area": "administracion",
-  "lastname": "Morales",
-  "mail": "morales@gmail.com",
-  "name": "Miles",
-  "passwords": "12345",
-  "user": "jaimem"
+  "user": "abcd",
+  "passwords": "asdab"
 }
 
 ### Eliminar Usuario
@@ -40,4 +37,18 @@ Content-Type: application/json
 {
   "passwords": "12345",
   "user": "mendesj"
+}
+
+### Actualizar usuario
+PUT http://localhost:8081/usuario/2
+Content-Type: application/json
+
+{
+  "user": "mendesj",
+  "passwords": "12345",
+  "name": "Jaimito",
+  "lastname": "Mendez",
+  "area": "administracion",
+  "mail": "mendesj@noreply.com",
+  "first": false
 }

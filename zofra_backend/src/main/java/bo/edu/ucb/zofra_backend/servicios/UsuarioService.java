@@ -13,46 +13,46 @@ public class UsuarioService {
     private UsuariosRepository userRep;
 
     @Autowired
-    public UsuarioService(UsuariosRepository x){
-        this.userRep=x;
+    public UsuarioService(UsuariosRepository x) {
+        this.userRep = x;
     }
 
-    public List<Usuarios> obtenerUsuarios(){
+    public List<Usuarios> obtenerUsuarios() {
         return userRep.findAll();
     }
 
-    public Usuarios crearUsuario(Usuarios usuario){
+    public Usuarios crearUsuario(Usuarios usuario) {
         return userRep.save(usuario);
     }
 
-    public Usuarios actualizarUsuario(Integer id, Usuarios usuario){
+    public Usuarios actualizarUsuario(Integer id, Usuarios usuario) {
         Usuarios usuarioAntiguo = userRep.findById(id).orElse(null);
-        if(usuarioAntiguo == null){
+        if (usuarioAntiguo == null) {
             return null;
-        }
-        else{
-            usuarioAntiguo.setArea(usuario.getArea());
-            usuarioAntiguo.setLastname(usuario.getLastname());
-            usuarioAntiguo.setMail(usuario.getMail());
-            usuarioAntiguo.setName(usuario.getName());
-            usuarioAntiguo.setPasswords(usuario.getPasswords());
-            usuarioAntiguo.setUser(usuario.getUser());
+        } else {
+            if(usuario.getArea() != null) usuarioAntiguo.setArea(usuario.getArea());
+            if(usuario.getMail() != null) usuarioAntiguo.setMail(usuario.getMail());
+            if(usuario.getLastname() != null) usuarioAntiguo.setLastname(usuario.getLastname());
+            if(usuario.getName() != null) usuarioAntiguo.setName(usuario.getName());
+            if(usuario.getPasswords() != null) usuarioAntiguo.setPasswords(usuario.getPasswords());
+            if(usuario.getUser() != null) usuarioAntiguo.setUser(usuario.getUser());
+            if(usuario.getFirst() != null) usuarioAntiguo.setFirst(usuario.getFirst());
             return userRep.save(usuarioAntiguo);
         }
     }
 
-    public boolean eliminarUsuario(Integer id){
+    public boolean eliminarUsuario(Integer id) {
         userRep.deleteById(id);
         return true;
     }
 
-    public Usuarios encontrarUnUsuario(Integer id){
+    public Usuarios encontrarUnUsuario(Integer id) {
 
         return userRep.findById(id).orElse(null);
     }
 
-    public Usuarios obenerUserandPass(Usuarios usuario){
-        Usuarios respons1 = userRep.getUsuariosByCredential(usuario.getUser(),usuario.getPasswords()).orElse(null);
+    public Usuarios obenerUserandPass(Usuarios usuario) {
+        Usuarios respons1 = userRep.getUsuariosByCredential(usuario.getUser(), usuario.getPasswords()).orElse(null);
         return respons1;
     }
 
