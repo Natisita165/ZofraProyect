@@ -36,7 +36,7 @@ public class UsuarioService {
             if(usuario.getName() != null) usuarioAntiguo.setName(usuario.getName());
             if(usuario.getPasswords() != null) usuarioAntiguo.setPasswords(usuario.getPasswords());
             if(usuario.getUser() != null) usuarioAntiguo.setUser(usuario.getUser());
-            if(usuario.getFirst() != null) usuarioAntiguo.setFirst(usuario.getFirst());
+            if(usuario.isFirst() == true) usuarioAntiguo.setFirst(false);
             return userRep.save(usuarioAntiguo);
         }
     }
@@ -54,6 +54,25 @@ public class UsuarioService {
     public Usuarios obenerUserandPass(Usuarios usuario) {
         Usuarios respons1 = userRep.getUsuariosByCredential(usuario.getUser(), usuario.getPasswords()).orElse(null);
         return respons1;
+    }
+
+    public Usuarios actualizarPassword(Integer id, Usuarios usuario) {
+        Usuarios usuarioAntiguo2 = userRep.findById(id).orElse(null);
+        if (usuarioAntiguo2 == null) {
+            return null;
+        } else {
+            System.out.println(usuarioAntiguo2);
+            if(usuario.getArea() != null) usuarioAntiguo2.setArea(usuario.getArea());
+            if(usuario.getMail() != null) usuarioAntiguo2.setMail(usuario.getMail());
+            if(usuario.getLastname() != null) usuarioAntiguo2.setLastname(usuario.getLastname());
+            if(usuario.getName() != null) usuarioAntiguo2.setName(usuario.getName());
+            if(usuario.getPasswords() != null) usuarioAntiguo2.setPasswords(usuario.getPasswords());
+            if(usuario.getUser() != null) usuarioAntiguo2.setUser(usuario.getUser());
+            if(usuario.isFirst() == false) usuarioAntiguo2.setFirst(true);
+            System.out.println(usuario.isFirst());
+            System.out.println(usuarioAntiguo2);
+            return userRep.save(usuarioAntiguo2);
+        }
     }
 
 }

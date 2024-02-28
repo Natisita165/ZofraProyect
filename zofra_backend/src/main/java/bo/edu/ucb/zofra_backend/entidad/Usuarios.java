@@ -24,10 +24,13 @@ public class Usuarios {
     private String lastname;
     private String area;
     private String mail;
-    private Boolean first;
-    //private Blob imagen;
+    private boolean first;
 
+    public boolean isFirst() {
+        return first;
+    }
 
-
-
+    public void setFirst(boolean first) {
+        this.first = first;
+    }
 }

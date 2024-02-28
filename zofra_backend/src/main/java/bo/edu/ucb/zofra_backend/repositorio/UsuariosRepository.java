@@ -17,4 +17,6 @@ public interface UsuariosRepository extends JpaRepository<Usuarios,Integer> {
     //@Transactional(readOnly = true)
     Optional<Usuarios> getUsuariosByCredential(@Param("user") String user, @Param("passwords") String passwords);
 
+
+
 }

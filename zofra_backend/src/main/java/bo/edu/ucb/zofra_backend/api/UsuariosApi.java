@@ -74,6 +74,20 @@ public class UsuariosApi {
             return new ResponseEntity<>(respuesta3, HttpStatus.OK);
         }
     }
+
+
+    @PutMapping("/usuario/passChange/{id}")
+    public ResponseEntity<?> updateUsuariosPassword(@PathVariable("id") Integer id, @RequestBody Usuarios usuario) {
+        Usuarios respuesta = userServ.actualizarPassword(id, usuario);
+        if (respuesta == null) {
+            return new ResponseEntity<>("El id no existe", HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(respuesta, HttpStatus.OK);
+
+
+        }
+
+    }
 }
 
 

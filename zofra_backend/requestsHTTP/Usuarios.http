@@ -6,13 +6,13 @@ POST http://localhost:8081/usuario
 Content-Type: application/json
 
 {
-  "area": "IT",
-  "lastname": "Perez",
-  "mail": "perez@gmail.com",
-  "name": "Carlos",
+  "user": "mendesj",
   "passwords": "12345",
-  "user": "user-it2",
-  "first": false
+  "name": "Jaimito",
+  "lastname": "Mendez",
+  "area": "administracion",
+  "mail": "mendesj@noreply.com",
+  "first": true
 }
 
 ### Actualizar usuario
@@ -51,4 +51,12 @@ Content-Type: application/json
   "area": "administracion",
   "mail": "mendesj@noreply.com",
   "first": false
+}
+
+### Actualizar contrasenia
+PUT http://localhost:8081/usuario/passChange/2
+Content-Type: application/json
+
+{
+  "passwords": "123"
 }
