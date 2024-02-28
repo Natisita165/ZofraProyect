@@ -14,6 +14,7 @@ export class CambiarPassPopUpComponent {
 
 
   varPass: Usuarios={}
+  varFirst: Usuarios;
 
   constructor(
     public dialogRef: MatDialogRef<CambiarPassPopUpComponent>,
@@ -22,7 +23,7 @@ export class CambiarPassPopUpComponent {
   ) {
   }
 
-  updateDoc(data:any){
+  updatePass(data:any){
     if(data.txtNuevPass1 !== data.txtNuevPass2){
       Swal.fire({
         title: "Error al actualizar",
@@ -32,8 +33,9 @@ export class CambiarPassPopUpComponent {
       return;
     }
     this.varPass.passwords = data.txtNuevPass1;
-
-    this.usuariosService.editarUsuario(this.varPass, localStorage.getItem("id")).subscribe(
+    
+ 
+    this.usuariosService.editarUsuarioContrasenia(this.varPass, localStorage.getItem("id")).subscribe(
       (res) => {
         console.log(res);
         this.router.navigateByUrl('home');

@@ -51,4 +51,12 @@ export class UsuariosServiceService {
       {headers:this.httpHeaders}
     )
   }
+  
+  editarUsuarioContrasenia(usuario:Usuarios, id:any){
+    return this.http.put(
+      this.Url+"/usuario/passChange/"+id,
+      usuario,
+      {headers:this.httpHeaders}
+    )
+  }
 }

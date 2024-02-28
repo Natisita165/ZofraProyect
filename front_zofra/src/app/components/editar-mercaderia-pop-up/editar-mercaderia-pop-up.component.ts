@@ -85,13 +85,7 @@ export class EditarMercaderiaPopUpComponent {
   }
 
   
-  faltaArchivo(){
-    Swal.fire({
-      title: "¡No hay documento!",
-      text: "Sube un archivo porfavor",
-      icon: "warning"
-    });
-  }
+
     
 
 
@@ -99,11 +93,6 @@ export class EditarMercaderiaPopUpComponent {
   updateMerc(data: any) {
     console.log(data);
     console.log(this.file);
-    if(!this.file){
-      console.log("falta el archivo!");
-      this.faltaArchivo();
-      return;
-    }
 
     this.mercaderia.nameMerc = data.txtNombreM;
     this.mercaderia.importer = data.txtNombreImporter;
@@ -122,8 +111,9 @@ export class EditarMercaderiaPopUpComponent {
         console.log(res);
         const response = res as Mercaderia;
         const insertID = response.idMercaderia;
+        
 
-        if (this.withFile === true) {
+        if (this.file) {
           console.log("Editando archivo tambien")
           let formData = new FormData();
           formData.set("pdfD", this.file);
