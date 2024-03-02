@@ -6,13 +6,13 @@ POST http://localhost:8081/usuario
 Content-Type: application/json
 
 {
-  "user": "mendesj",
+  "user": "valea",
   "passwords": "12345",
-  "name": "Jaimito",
-  "lastname": "Mendez",
-  "area": "administracion",
-  "mail": "mendesj@noreply.com",
-  "first": true
+  "name": "Valeria",
+  "lastname": "Aguirre",
+  "area": "IT",
+  "mail": "valeriaa@noreply.com",
+  "first": false
 }
 
 ### Actualizar usuario
