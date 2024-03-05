@@ -1,0 +1,3 @@
+
+### Historial de documentos Un solo Usuario
+GET http://localhost:8081/updatedocumento/historial/3
