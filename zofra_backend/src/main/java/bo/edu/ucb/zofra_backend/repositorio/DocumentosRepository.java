@@ -1,6 +1,7 @@
 package bo.edu.ucb.zofra_backend.repositorio;
 
 import bo.edu.ucb.zofra_backend.entidad.Documentos;
+import bo.edu.ucb.zofra_backend.entidad.UpdateDocumentos;
 import bo.edu.ucb.zofra_backend.entidad.Usuarios;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -22,5 +23,6 @@ public interface DocumentosRepository extends JpaRepository<Documentos, Integer>
 //    @Query(value = "SELECT d.idDocumentos, d.areaD, d.codeD,d.nameD, d.typeD, d.estadoD, d.idUsuarios, d.pdfD, d.pdfType FROM Documentos d, Usuarios u " +
 //            "WHERE u.idUsuarios = :idUsuarios and u.idUsuarios = d.idUsuarios.idUsuarios", nativeQuery = false)
 //    Optional<List<Documentos>> getDocumentosByIdUsuariosJPQL(@Param("idUsuarios") Integer idUsuarios);
+
 
 }

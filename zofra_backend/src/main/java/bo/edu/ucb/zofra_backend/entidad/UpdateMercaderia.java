@@ -20,6 +20,7 @@ public class UpdateMercaderia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idUpdateMercaderia")
     private Integer idUpdateMercaderia;
+    private Integer newIdMercaderia;
     private Integer newIdUsuarios;
     private Integer newIdPuntosControl;
     private String newNameMerc;

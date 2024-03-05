@@ -83,11 +83,7 @@ this.obtenerDocumento()
   updateDoc(data: any) {
     console.log(data);
     console.log(this.file);
-    if(!this.file){
-      console.log("falta el archivo!");
-      this.faltaArchivo();
-      return;
-    }
+
     this.varDocumento.nameD=data.txtNombreD;
     this.varDocumento.codeD=data.txtCodigoD;
     this.varDocumento.typeD=data.txtTipoD;
@@ -103,7 +99,8 @@ this.obtenerDocumento()
         const response = res as Documento;
         const insertID = response.idDocumentos;
 
-        if (this.withFile === true) {
+        
+        if (this.file) {
           console.log("Editando archivo tambien")
           let formData = new FormData();
           formData.set("pdfD", this.file);

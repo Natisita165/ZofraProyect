@@ -46,11 +46,7 @@ export class EditarPolizaPopUpComponent {
     this.poliza.stateP=data.txtEstadoP;
     this.poliza.typeP=data.txtTipoP;
 
-    if(!this.file){
-          console.log("falta el archivo!");
-          this.faltaArchivo();
-          return;
-        }
+    
         
     console.log("data para actualizar: ", this.poliza);
     this.polizaService.editarPoliza(this.poliza, this.id).subscribe(
@@ -59,7 +55,7 @@ export class EditarPolizaPopUpComponent {
         const response = res as Poliza;
         const insertID = response.idPoliza;
 
-        if (this.withFile === true) {
+        if (this.file) {
           console.log("Editando archivo tambien")
           let formData = new FormData();
           formData.set("pdfD", this.file);

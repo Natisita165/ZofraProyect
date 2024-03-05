@@ -18,6 +18,7 @@ public class UpdatePoliza {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idUpdatePoliza")
     private Integer idUpdatePoliza;
+    private Integer newIdPoliza;
     private String newTypeP;
     private String newCodeP;
     private String newAreaP;

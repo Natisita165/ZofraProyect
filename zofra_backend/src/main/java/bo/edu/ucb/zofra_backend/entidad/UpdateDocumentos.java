@@ -3,6 +3,7 @@ package bo.edu.ucb.zofra_backend.entidad;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +14,7 @@ import java.sql.Timestamp;
 @Table(name = "updatedocumentos")
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Data
 public class UpdateDocumentos {
 
@@ -20,11 +22,12 @@ public class UpdateDocumentos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idUpdateDocumentos")
     private Integer idUpdateDocumentos;
+    private Integer newIdDocumentos;
     private Integer newIdUsuarios;
     private String newTypeD;
     private String newestadoD;
     private String newcodeD;
-    private Timestamp changeDateD;
+    private String changeDateD;
 
 
     @Lob

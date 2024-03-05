@@ -1,7 +1,7 @@
 <form class="row g-3" (submit)="updatePoli(formulario.value)" #formulario="ngForm" ngNativeValidate>
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Codigo</label>
-      <input type="email" class="form-control" id="inputEmail4" name="txtCodigoP" ngModel="{{varPoliza.codeP}}" value="{{varPoliza.codeP}}" required>
+      <input type="text" class="form-control" id="inputEmail4" name="txtCodigoP" ngModel="{{varPoliza.codeP}}" value="{{varPoliza.codeP}}" required>
     </div>
     <div class="col-md-6">
       <label for="inputPassword4" class="form-label">Area</label>
@@ -20,7 +20,7 @@
       <input type="file" class="form-control" id="inputPDF" name="txtPdfD" (change)="getFile($event)">
     </div>
     <div class="col-12 buttons">
-      <button type="submit" class="btn btn-primary" style="background-color: white; border-color: #004188; color: #004188;" (click)="onCreate()">Crear</button>
+      <button type="submit" class="btn btn-primary" style="background-color: white; border-color: #004188; color: #004188;" (click)="onCreate()">Editar</button>
       <button class="btn btn-outline-danger" (click)="onCancel($event)">Cancelar</button>
     </div>
   </form>

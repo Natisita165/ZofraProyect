@@ -2,8 +2,10 @@ package bo.edu.ucb.zofra_backend.servicios;
 
 
 import bo.edu.ucb.zofra_backend.entidad.Documentos;
+import bo.edu.ucb.zofra_backend.entidad.UpdateDocumentos;
 import bo.edu.ucb.zofra_backend.entidad.Usuarios;
 import bo.edu.ucb.zofra_backend.repositorio.DocumentosRepository;
+import bo.edu.ucb.zofra_backend.repositorio.UpdateDocumentosRepository;
 import bo.edu.ucb.zofra_backend.util.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,9 +19,10 @@ import java.util.Optional;
 public class DocumentosService {
     private DocumentosRepository docRep;
 
+
     @Autowired
     public DocumentosService(DocumentosRepository y){
-        this.docRep=y;
+        this.docRep=y;;
     }
 
     public List<Documentos> obtenerDocumentos(){
@@ -90,4 +93,6 @@ public class DocumentosService {
         byte[] pdfFile = FileUtils.decompressFile(doc.get().getPdfD());
         return pdfFile;
     }
+
+
 }

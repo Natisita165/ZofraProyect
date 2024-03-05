@@ -2,6 +2,7 @@ package bo.edu.ucb.zofra_backend.api;
 
 
 import bo.edu.ucb.zofra_backend.entidad.Documentos;
+import bo.edu.ucb.zofra_backend.entidad.UpdateDocumentos;
 import bo.edu.ucb.zofra_backend.entidad.Usuarios;
 import bo.edu.ucb.zofra_backend.repositorio.DocumentosRepository;
 import bo.edu.ucb.zofra_backend.servicios.DocumentosService;
@@ -97,4 +98,6 @@ public class DocumentosApi {
         //return new ResponseEntity<>(pdfFile, HttpStatus.OK);
         return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_PDF).body(pdfFile);
     }
+
+
 }

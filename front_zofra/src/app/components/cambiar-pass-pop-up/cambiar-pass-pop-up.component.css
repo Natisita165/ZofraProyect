@@ -3,4 +3,17 @@ form{
     /* margin-top: 250px; */
     color: white;
 }
+label.title1{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: arial;
+    padding: 2% 42%;
+    text-align: center;
+}
 
+label.title2{
+    font-size: 10px;
+    font-weight: bold;
+    font-family: arial;
+    text-align: center;
+}
