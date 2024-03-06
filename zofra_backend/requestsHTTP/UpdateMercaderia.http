@@ -1,0 +1,2 @@
+### Historial de mercaderia Un solo Usuario
+GET http://localhost:8081/updatemercaderia/historial/3

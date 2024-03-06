@@ -3,6 +3,7 @@ package bo.edu.ucb.zofra_backend.entidad;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +14,7 @@ import java.sql.Timestamp;
 @Table(name = "updatemercaderia")
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Data
 public class UpdateMercaderia {
 
@@ -29,7 +31,7 @@ public class UpdateMercaderia {
     private String newImporter;
     private String newType;
     private Date newDateIn;
-    private Timestamp changeDateM;
+    private String changeDateM;
 
 
     @Lob

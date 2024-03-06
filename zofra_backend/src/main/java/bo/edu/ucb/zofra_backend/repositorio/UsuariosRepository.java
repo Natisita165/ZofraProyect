@@ -13,7 +13,7 @@ public interface UsuariosRepository extends JpaRepository<Usuarios,Integer> {
 
 
     //@Query(value = "SELECT (user,passwords) FROM Usuarios WHERE user = :user AND passwords = :passwords", nativeQuery = true)
-    @Query(value = "SELECT * FROM usuarios WHERE user = :user AND passwords = :passwords", nativeQuery = true)
+    @Query(value = "SELECT * FROM usuarios WHERE user = :user AND passwords = sha1(:passwords)", nativeQuery = true)
     //@Transactional(readOnly = true)
     Optional<Usuarios> getUsuariosByCredential(@Param("user") String user, @Param("passwords") String passwords);
 

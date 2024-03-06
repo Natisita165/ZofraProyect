@@ -23,7 +23,7 @@ public class UpdatePoliza {
     private String newCodeP;
     private String newAreaP;
     private String newStateP;
-    private Timestamp changeDateP;
+    private String changeDateP;
 
 
     @Lob

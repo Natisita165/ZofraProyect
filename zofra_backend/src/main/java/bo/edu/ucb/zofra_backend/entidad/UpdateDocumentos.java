@@ -25,7 +25,7 @@ public class UpdateDocumentos {
     private Integer newIdDocumentos;
     private Integer newIdUsuarios;
     private String newTypeD;
-    private String newestadoD;
+    private Boolean newestadoD;
     private String newcodeD;
     private String changeDateD;
 
