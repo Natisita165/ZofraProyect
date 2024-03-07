@@ -3,6 +3,7 @@ package bo.edu.ucb.zofra_backend.entidad;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import java.sql.Timestamp;
 @Table(name = "updatepoliza")
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Data
 public class UpdatePoliza {
     @Id

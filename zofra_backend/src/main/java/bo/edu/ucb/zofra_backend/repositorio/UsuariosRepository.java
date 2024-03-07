@@ -19,4 +19,8 @@ public interface UsuariosRepository extends JpaRepository<Usuarios,Integer> {
 
 
 
+//    @Query(value = "INSERT INTO ")
+
+
+
 }
