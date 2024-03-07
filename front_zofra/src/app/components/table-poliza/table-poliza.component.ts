@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { NuevaPolizaPopUpComponent } from '../nueva-poliza-pop-up/nueva-poliza-pop-up.component';
 import Swal from 'sweetalert2';
 import { EditarPolizaPopUpComponent } from '../editar-poliza-pop-up/editar-poliza-pop-up.component';
+import { UpdatePolizaPopUpComponent } from '../update-poliza-pop-up/update-poliza-pop-up.component';
 
 @Component({
   selector: 'app-table-poliza',
@@ -113,5 +114,12 @@ export class TablePolizaComponent {
       }
     });
   }
-
+  openDialogDocUpdate(idDocumentos:any){
+    let dialogRef= this.dialog.open(UpdatePolizaPopUpComponent, {
+      width: '50%',
+      data: {
+        id: idDocumentos
+      }
+    });
+  }
 }

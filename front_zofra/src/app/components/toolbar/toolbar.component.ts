@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { CambiarPassPopUpComponent } from '../cambiar-pass-pop-up/cambiar-pass-pop-up.component';
 
 @Component({
   selector: 'app-toolbar',
@@ -11,7 +13,8 @@ export class ToolbarComponent implements OnInit{
   date?: string;
 
   constructor(
-    private router:Router
+    private router:Router,
+    private dialog: MatDialog
   ){
     
   }
@@ -34,4 +37,10 @@ export class ToolbarComponent implements OnInit{
     this.router.navigateByUrl('');
   }
 
+  changePass(){
+    let dialogRef= this.dialog.open(CambiarPassPopUpComponent, {
+      width: '50%',
+    });
+    console.log("cambiar contrasenia");
+  }
 }

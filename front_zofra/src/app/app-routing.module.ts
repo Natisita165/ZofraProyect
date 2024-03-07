@@ -13,6 +13,9 @@ import { NuevoDocumentoPopUpComponent } from './components/nuevo-documento-pop-u
 import { NuevaPolizaPopUpComponent } from './components/nueva-poliza-pop-up/nueva-poliza-pop-up.component';
 import { PuntosControlComponent } from './components/puntos-control/puntos-control.component';
 import { ReporteMercaderiaComponent } from './components/reporte-mercaderia/reporte-mercaderia.component';
+import { UpdateDocumentosPopUpComponent } from './components/update-documentos-pop-up/update-documentos-pop-up.component';
+import { UpdateMercaderiaPopUpComponent } from './components/update-mercaderia-pop-up/update-mercaderia-pop-up.component';
+import { UpdatePolizaPopUpComponent } from './components/update-poliza-pop-up/update-poliza-pop-up.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -27,7 +30,10 @@ const routes: Routes = [
   {path: 'crear-nuevo-documento', component: NuevoDocumentoPopUpComponent},
   {path: 'crear-nueva-poliza', component: NuevaPolizaPopUpComponent},
   {path: 'puntos-control', component: PuntosControlComponent},
-  {path: 'reporte-mercaderia', component: ReporteMercaderiaComponent}
+  {path: 'reporte-mercaderia', component: ReporteMercaderiaComponent},
+  {path: 'update-documentos', component: UpdateDocumentosPopUpComponent},
+  {path: 'update-mercaderia', component: UpdateMercaderiaPopUpComponent},
+  {path: 'update-poliza', component: UpdatePolizaPopUpComponent}
 ];
 
 @NgModule({

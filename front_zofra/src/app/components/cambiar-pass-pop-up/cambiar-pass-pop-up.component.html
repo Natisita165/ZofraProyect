@@ -1,6 +1,10 @@
 <form class="row g-3" (submit)="updatePass(formulario.value)" #formulario="ngForm" ngNativeValidate>
   <label class="title1">CAMBIAR <br> CONTRASEÑA</label> <br>
-  <label class="title2"> Porfavor cambiar su contraseña</label>
+  <label class="title2"> Ingrese los datos</label>
+  <div class="col-12">
+    <label for="inputEmail4" class="form-label" >Antigua Contraseña</label>
+    <input type="password" class="form-control" id="inputEmail4" name="txtNuevPass3" ngModel="{{varPass.passwords}}" value="{{varPass.passwords}}" required >
+  </div>
     <div class="col-12">
       <label for="inputEmail4" class="form-label" >Nueva Contraseña</label>
       <input type="password" class="form-control" id="inputEmail4" name="txtNuevPass1" ngModel="{{varPass.passwords}}" value="{{varPass.passwords}}" required >

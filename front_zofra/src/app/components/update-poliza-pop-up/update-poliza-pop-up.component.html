@@ -1,0 +1,28 @@
+<form>
+<br>
+<label class="title1">HISTORIAL</label> <br>
+<table class="table">
+    <thead class="table-dark">
+      <tr class="tablahead">
+        <th class="tablahead" scope="col">Codigo</th>
+        <th class="tablahead" scope="col">Area</th>
+        <th class="tablahead" scope="col">Estado</th>
+        <th class="tablahead" scope="col">Tipo</th>
+        <th class="tablahead" scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let doc of varPolizaUp">
+        <td scope="row">{{doc.newCodeP}}</td>
+        <td>{{doc.newAreaP}}</td>
+        <td>{{doc.newStateP}}</td>
+        <td>{{doc.newTypeP}}</td>
+        <td>
+          <button type="button" class="btn btn-success" (click)="descargarDocsPoli(doc.idUpdatePoliza)">Descargar</button>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+</form>

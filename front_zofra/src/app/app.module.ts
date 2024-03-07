@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatDialogModule } from '@angular/material/dialog'
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,6 +31,10 @@ import { EditarPolizaPopUpComponent } from './components/editar-poliza-pop-up/ed
 import { EditarDocumentoPopUpComponent } from './components/editar-documento-pop-up/editar-documento-pop-up.component';
 import { EditarUsuarioPopUpComponent } from './components/editar-usuario-pop-up/editar-usuario-pop-up.component';
 import { TablaPuntosPopUpComponent } from './components/tabla-puntos-pop-up/tabla-puntos-pop-up.component';
+import { UpdateDocumentosPopUpComponent } from './components/update-documentos-pop-up/update-documentos-pop-up.component';
+import { UpdateMercaderiaPopUpComponent } from './components/update-mercaderia-pop-up/update-mercaderia-pop-up.component';
+import { UpdatePolizaPopUpComponent } from './components/update-poliza-pop-up/update-poliza-pop-up.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -57,7 +62,11 @@ import { TablaPuntosPopUpComponent } from './components/tabla-puntos-pop-up/tabl
     EditarPolizaPopUpComponent,
     EditarDocumentoPopUpComponent,
     EditarUsuarioPopUpComponent,
-    TablaPuntosPopUpComponent
+    TablaPuntosPopUpComponent,
+    UpdateDocumentosPopUpComponent,
+    UpdateMercaderiaPopUpComponent,
+    UpdatePolizaPopUpComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -66,7 +75,8 @@ import { TablaPuntosPopUpComponent } from './components/tabla-puntos-pop-up/tabl
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

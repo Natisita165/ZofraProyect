@@ -5,6 +5,7 @@ import { catchError } from 'rxjs/operators';
 import { throwError as observableThrowError } from 'rxjs';
 import { Observable } from 'rxjs';
 import { ImplicitReceiver } from '@angular/compiler';
+import { UpdatePasswords } from '../interface/update-passwords';
 
 
 @Injectable({
@@ -58,5 +59,9 @@ export class UsuariosServiceService {
       usuario,
       {headers:this.httpHeaders}
     )
+  }
+
+  checkPasword(usuario: UpdatePasswords, id:any) {
+    return this.http.post(this.Url + "/updatepass/"+id, usuario, { headers: this.httpHeaders });
   }
 }

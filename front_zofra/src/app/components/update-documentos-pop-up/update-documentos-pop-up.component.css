@@ -1,0 +1,54 @@
+table{
+    border-color: #004188;
+    /* height: 70% !important;*/
+    /* width: 40% !important;  */
+    padding: 5px;
+    
+
+}
+
+th{
+    color: #004188;
+    border: #004188 3px solid;
+}
+
+td{
+    border: #004188 3px solid;
+}
+
+.tablahead{
+    color: white;
+    background-color: #004188 !important;
+}
+
+.table-dark{
+    background-color: #004188 !important;
+}
+.containerButton{
+    margin: 0 25%;
+}
+label.title1{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: arial;
+    padding: 2% 42.6%;
+    text-align: center;
+    background-color: #004188;
+    color: white;
+}
+form{
+    background-color: #004188 !important;
+    /* height: 70% !important;
+    width: 50% !important; */
+    /* margin-top: 250px; */
+    /* margin-left: 370px; */
+    margin: 3%;
+    color: white;
+    padding: 2%;
+    /* margin-top: 100px; */
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+}

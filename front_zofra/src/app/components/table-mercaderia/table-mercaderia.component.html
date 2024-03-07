@@ -1,7 +1,8 @@
 <app-toolbar></app-toolbar>
 <app-nav-pills></app-nav-pills>
 <div class="containerButton">
-  <button type="button" class="btn btn-success" (click)="openDialog()">Nueva Mercaderia</button>
+  <button type="button" class="btn btn-success" (click)="openDialog()">Nueva Mercaderia</button>&nbsp;
+  <!-- <input type="text" class="form-control" name="filterPost" placeholder="Buscar....." [(ngModel)]="filterPost"> -->
 </div>
 <br>
 <table class="table">
@@ -16,7 +17,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let merc of varMercaderia">
+    <!-- <tr *ngFor="let merc of varMercaderia | filter:filterPost"> -->
+    <tr *ngFor="let merc of varMercaderia ">
       <td>{{merc.nameMerc}}</td>
       <td>{{merc.importer}}</td>
       <td>{{merc.price}}</td>
@@ -27,10 +29,12 @@
         &nbsp;
         <button type="button" class="btn btn-warning" (click)="openEdition(merc.idMercaderia)">Editar</button> &nbsp;
         <!-- <button type="button" class="btn btn-danger">Eliminar</button>  -->
-        <button type="button" class="btn btn-primary" (click)="deleteMerc(merc.idMercaderia)">Eliminar</button>
+        <button type="button" class="btn btn-primary" (click)="deleteMerc(merc.idMercaderia)">Eliminar</button>&nbsp;
+        <button type="button" class="btn btn-info" (click)="openDialogDocUpdate(merc.idMercaderia)">Historial</button>
       </td>
     </tr>
 
   </tbody>
 </table>
+
 <br>

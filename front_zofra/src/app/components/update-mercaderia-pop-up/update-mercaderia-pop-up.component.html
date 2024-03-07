@@ -1,0 +1,30 @@
+<form>
+<br>
+<label class="title1">HISTORIAL</label> <br>
+<table class="table">
+  <thead class="table-dark">
+    <tr class="tablahead">
+      <th class="tablahead" scope="col">Nombre Mercaderia</th>
+      <th class="tablahead" scope="col">Nombre Importador</th>
+      <th class="tablahead" scope="col">Precio</th>
+      <th class="tablahead" scope="col">Cantidad</th>
+      <th class="tablahead" scope="col">Tipo</th>
+      <th class="tablahead" scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let upmerc of varUpdateMercaderia">
+      <td>{{upmerc.newNameMerc}}</td>
+      <td>{{upmerc.newImporter}}</td>
+      <td>{{upmerc.newPrice}}</td>
+      <td>{{upmerc.newQuantity}}</td>
+      <td>{{upmerc.newType}}</td>
+      <td>
+        <button type="button" class="btn btn-success" (click)="descargarDocs(upmerc.idUpdateMercaderia)">Descargar</button>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+<br>
+</form>

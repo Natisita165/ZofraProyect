@@ -26,3 +26,9 @@
 .toolbar #logout:hover {
     color: #dfdfdf !important;
 }
+
+.toolbar #change {
+    margin: 0 16px;
+    text-decoration: none;
+    color: white !important;
+}

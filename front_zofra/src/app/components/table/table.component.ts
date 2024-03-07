@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import { NuevoDocumentoPopUpComponent } from '../nuevo-documento-pop-up/nuevo-documento-pop-up.component';
 import { MatDialog } from '@angular/material/dialog';
 import { EditarDocumentoPopUpComponent } from '../editar-documento-pop-up/editar-documento-pop-up.component';
+import { UpdateDocumentosPopUpComponent } from '../update-documentos-pop-up/update-documentos-pop-up.component';
 
 @Component({
   selector: 'app-table',
@@ -24,7 +25,7 @@ export class TableComponent implements OnInit{
   }
 
   obtenerDocumentos(){
-    this.documentoService.getDocumentos().subscribe(
+    this.documentoService.getDocumentoByUsuario(localStorage.getItem('id')).subscribe(
       (res)=>{
         this.varDocs=res.body as Documento[];
         console.log(this.varDocs);
@@ -119,5 +120,12 @@ export class TableComponent implements OnInit{
       }
     });
   }
-
+  openDialogDocUpdate(idDocumentos:any){
+    let dialogRef= this.dialog.open(UpdateDocumentosPopUpComponent, {
+      width: '50%',
+      data: {
+        id: idDocumentos
+      }
+    });
+  }
 }

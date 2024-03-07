@@ -63,4 +63,11 @@ export class DocumentoService {
       this.Url+"/documento/"+id, {observe:"response"}
     )
   }
+
+
+  getDocumentoByUsuario(id:any){
+    return this.http
+    .get(this.Url+"/documento/docsUsuario/"+id,{observe:"response"})
+  
+  }
 }

@@ -2,6 +2,7 @@
 <app-nav-pills></app-nav-pills>
 <div class="containerButton">
 <button type="button" class="btn btn-secondary" (click)="openDialogDoc()">Nuevo Documento</button>
+
 </div>
 <br>
 <div class="container"><hr></div>
@@ -27,7 +28,8 @@
           <button type="button" class="btn btn-success" (click)="descargarDocs(doc.idDocumentos)" >Descargar</button> &nbsp;
           <button type="button" class="btn btn-warning" (click)="openEditionDoc(doc.idDocumentos)">Editar</button> &nbsp;
           <!-- <button type="button" class="btn btn-danger">Eliminar</button>-->
-          <button type="button" class="btn btn-primary" (click)="deleteDoc(doc.idDocumentos)">Eliminar</button> 
+          <button type="button" class="btn btn-primary" (click)="deleteDoc(doc.idDocumentos)">Eliminar</button> &nbsp;
+          <button type="button" class="btn btn-info" (click)="openDialogDocUpdate(doc.idDocumentos)">Historial</button>
         </td>
       </tr>
       

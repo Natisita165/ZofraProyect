@@ -1,0 +1,30 @@
+<form>
+<div class="container"><hr></div>
+<label class="title1">HISTORIAL</label> <br>
+<table class="table">
+    <thead class="table-dark">
+      <tr class="tablahead">
+        <th class="tablahead" scope="col">Codigo</th>
+        <th class="tablahead" scope="col">Nombre Documento</th>
+        <th class="tablahead" scope="col">Tipo</th>
+        <th class="tablahead" scope="col">Estado</th>
+        <th class="tablahead" scope="col">Fecha de Cambio</th>
+        <th class="tablahead" scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let docup of varDocsUps">
+        <td scope="row">{{docup.newcodeD}}</td>
+        <td>{{docup.newnameD}}</td>
+        <td>{{docup.newTypeD}}</td>
+        <td><i style="font-size: 2em;" class="{{docup.newestadoD? 'bi bi-unlock-fill':'bi bi-lock-fill'}}"></i></td>
+        <td>{{docup.changeDateD}}</td>
+        <td>
+          <button type="button" class="btn btn-success" (click)="descargarDocs(docup.newIdDocumentos)" >Descargar</button> &nbsp;
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+</form>

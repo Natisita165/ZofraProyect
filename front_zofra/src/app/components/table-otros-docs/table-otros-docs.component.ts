@@ -20,7 +20,7 @@ export class TableOtrosDocsComponent implements OnInit{
   }
 
   obtenerOtrosDocumentos(){
-    this.documentoService.getDocumentos().subscribe(
+    this.documentoService.getDocumentoLock().subscribe(
       (res)=>{
         this.varOtherDocs=res.body as Documento[];
         console.log(this.varOtherDocs);

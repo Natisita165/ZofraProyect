@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import { NuevaMercaderiaPopUpComponent } from '../nueva-mercaderia-pop-up/nueva-mercaderia-pop-up.component';
 import { MatDialog } from '@angular/material/dialog';
 import { EditarMercaderiaPopUpComponent } from '../editar-mercaderia-pop-up/editar-mercaderia-pop-up.component';
+import { UpdateMercaderiaPopUpComponent } from '../update-mercaderia-pop-up/update-mercaderia-pop-up.component';
 
 @Component({
   selector: 'app-table-mercaderia',
@@ -16,6 +17,8 @@ export class TableMercaderiaComponent {
   
   file: any;
   errorMessage="";
+
+  filterPost='';
 
   constructor(private mercaderiaService:MercaderiaService, private dialog: MatDialog){}
 
@@ -110,6 +113,15 @@ export class TableMercaderiaComponent {
       //height: '50%',
       data: {
         id: idMercaderia
+      }
+    });
+  }
+
+  openDialogDocUpdate(idDocumentos:any){
+    let dialogRef= this.dialog.open(UpdateMercaderiaPopUpComponent, {
+      width: '50%',
+      data: {
+        id: idDocumentos
       }
     });
   }

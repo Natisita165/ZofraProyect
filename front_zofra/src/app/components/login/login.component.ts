@@ -72,6 +72,7 @@ procesar(data:any){
         localStorage.setItem("name",this.usuarioResponse.name!.toString());
         localStorage.setItem("lastname",this.usuarioResponse.lastname!.toString());
         localStorage.setItem("first", this.usuarioResponse.first!.toString());
+        localStorage.setItem("username", this.usuarioResponse.user!.toString());
         localStorage.setItem("page","inicio");
 
 
